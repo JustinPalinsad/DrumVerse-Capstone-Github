@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://44x2qmjj58uu"]
+
+[ext_resource type="Texture2D" uid="uid://dsquc8bum0g33" path="res://Assets/Note.png" id="1_m01oh"]
+
+[node name="Notes" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(0, -110)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_m01oh")

@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://c7btabnu0ylc5"]
+
+[ext_resource type="Texture2D" uid="uid://b5hfnpt8wgo14" path="res://Assets/44.png" id="1_iytcn"]
+[ext_resource type="Script" uid="uid://nynu4tnlcyki" path="res://Scripts/LearningMode.gd" id="1_xjusv"]
+[ext_resource type="PackedScene" uid="uid://44x2qmjj58uu" path="res://Scenes/Shared/Note.tscn" id="2_274qs"]
+[ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="4_wemw5"]
+[ext_resource type="PackedScene" uid="uid://djmsgau7df3od" path="res://Scenes/Shared/HitEffect.tscn" id="5_n2tle"]
+
+[sub_resource type="Animation" id="Animation_wemw5"]
+resource_name = "demo"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingCircle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 5.975),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(266, 544), Vector2(1744, 544)]
+}
+
+[sub_resource type="Animation" id="Animation_n2tle"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MovingCircle:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(266, 544)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x1tyl"]
+_data = {
+&"RESET": SubResource("Animation_n2tle"),
+&"demo": SubResource("Animation_wemw5")
+}
+
+[node name="LearningMode" type="Node2D" node_paths=PackedStringArray("moving_circle", "notes_container")]
+script = ExtResource("1_xjusv")
+moving_circle = NodePath("MovingCircle")
+notes_container = NodePath("NotesContainer")
+hit_effect_scene = ExtResource("5_n2tle")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -7
+offset_left = -104.0
+offset_top = -41.0
+offset_right = 2011.0
+offset_bottom = 1183.0
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label1" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 264.0
+offset_top = 101.0
+offset_right = 1825.0
+offset_bottom = 302.0
+theme_override_font_sizes/font_size = 45
+text = "A quarter note is a basic unit of rhythm in music. In 4/4 time (which is the most common time signature), one quarter note equals one beat."
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 257.0
+offset_top = 643.0
+offset_right = 1794.0
+offset_bottom = 984.0
+theme_override_font_sizes/font_size = 45
+text = "A quarter note is a basic unit of rhythm in music. In A quarter note = 1 beat.  In 4/4 time, there are 4 quarter notes per measure."
+autowrap_mode = 3
+
+[node name="RepeatButton" type="Button" parent="."]
+offset_left = 703.0
+offset_top = 883.0
+offset_right = 1065.0
+offset_bottom = 980.0
+
+[node name="ContinueButton" type="Button" parent="."]
+offset_left = 1519.0
+offset_top = 883.0
+offset_right = 1764.0
+offset_bottom = 980.0
+
+[node name="44" type="TextureRect" parent="."]
+z_index = 1
+offset_left = 250.0
+offset_top = 338.0
+offset_right = 1762.0
+offset_bottom = 554.0
+texture = ExtResource("1_iytcn")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="NotesContainer" type="Node2D" parent="."]
+position = Vector2(453, 546)
+
+[node name="Notes" parent="NotesContainer" instance=ExtResource("2_274qs")]
+position = Vector2(177, -118)
+
+[node name="Notes2" parent="NotesContainer" instance=ExtResource("2_274qs")]
+position = Vector2(465, -118)
+
+[node name="Notes3" parent="NotesContainer" instance=ExtResource("2_274qs")]
+position = Vector2(799, -118)
+
+[node name="Notes4" parent="NotesContainer" instance=ExtResource("2_274qs")]
+position = Vector2(1087, -118)
+
+[node name="DemoAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_x1tyl")
+}
+
+[node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
+position = Vector2(266, 544)
+start_x = 268.0
+end_x = 1749.0
+
+[node name="HitEffect" parent="." instance=ExtResource("5_n2tle")]
+z_index = 1
+position = Vector2(-46, 544)

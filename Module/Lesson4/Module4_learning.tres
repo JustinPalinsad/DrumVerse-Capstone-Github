@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://jv5e10ead13f"]
+
+[ext_resource type="Resource" uid="uid://dr2w0yvq5hmi4" path="res://Module/Lesson4/continuebar4_1.tres" id="1_2jr00"]
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_8ulo5"]
+[ext_resource type="Resource" uid="uid://iaqjgqmp8dry" path="res://Module/Lesson4/continuebar4_2.tres" id="2_jjxe8"]
+[ext_resource type="Resource" uid="uid://c10tr04v31inj" path="res://Module/Lesson4/continuebar4_3.tres" id="3_0fh6m"]
+[ext_resource type="Resource" uid="uid://csll0o6fq621g" path="res://Module/Lesson4/endbar4.tres" id="4_liqgm"]
+
+[resource]
+script = ExtResource("1_8ulo5")
+title_text = "Lesson 4"
+top_texts = Array[String](["What Are Eighth Notes?", "Like this:"])
+bottom_texts = Array[String](["Eighth notes are twice as fast as quarter notes. If you’re counting the beat as:", "1-2-3-4", "Then eighth notes fit in between those beats:", "1 and 2 and 3 and 4 and", "So for every one beat, you hit two times – once on the number, once on the \"and\"."])
+demo_bars = Array[Resource]([ExtResource("1_2jr00"), ExtResource("2_jjxe8"), ExtResource("3_0fh6m"), ExtResource("4_liqgm")])
+show_note_labels = false
+slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

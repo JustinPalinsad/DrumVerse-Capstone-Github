@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://drqp03sxxq87f"]
+
+[ext_resource type="Texture2D" uid="uid://blthkb5bwvrjb" path="res://Assets/Continue.png" id="1_mlwp0"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_p4cin"]
+
+[node name="HitLine" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_p4cin")
+texture = ExtResource("1_mlwp0")

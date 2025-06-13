@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://05c7pb0nfoex"]
+
+[ext_resource type="Script" uid="uid://bfh6t1ooqft1h" path="res://Scripts/moving_circle.gd" id="1_kvadf"]
+[ext_resource type="Texture2D" uid="uid://battv6y8amyfm" path="res://Assets/vecteezy_geometric-design-element_21048718.png" id="2_ubxbn"]
+
+[node name="MovingCircle" type="Node2D"]
+z_index = 3
+script = ExtResource("1_kvadf")
+
+[node name="Circle" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.0106773, 0.0106773)
+texture = ExtResource("2_ubxbn")
+
+[node name="OutlineSprite" type="Sprite2D" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+scale = Vector2(0.016, 0.016)
+texture = ExtResource("2_ubxbn")

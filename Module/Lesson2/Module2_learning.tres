@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://dbk8kqpiqvsyu"]
+
+[ext_resource type="Resource" uid="uid://6dmbpmruq3yq" path="res://Module/Lesson2/continuebar2_1.tres" id="1_6jx6y"]
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_mh682"]
+[ext_resource type="Resource" uid="uid://bojwa11volw2f" path="res://Module/Lesson2/continuebar2_2.tres" id="2_sp10r"]
+[ext_resource type="Resource" uid="uid://c5l40c5j8bw42" path="res://Module/Lesson2/continuebar2_3.tres" id="3_k08qt"]
+[ext_resource type="Resource" uid="uid://w0l5co753s3w" path="res://Module/Lesson2/endbar2.tres" id="4_wa7wb"]
+
+[resource]
+script = ExtResource("1_mh682")
+title_text = "LESSON 2"
+top_texts = Array[String](["Let's learn the half note. ", " like this"])
+bottom_texts = Array[String](["It lasts for 2 counts. ", "It looks like the whole note, but with a stem. That stem tells us it’s shorter. ", "now we always tap it on the one", "Count it like this: ", "'1... 2...’ ", "Tap once, then count to 2 before your next hit", "and then tap again on the third", "‘3… 4…’"])
+demo_bars = Array[Resource]([ExtResource("1_6jx6y"), ExtResource("2_sp10r"), ExtResource("3_k08qt"), ExtResource("4_wa7wb")])
+slide3_message = "Now Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

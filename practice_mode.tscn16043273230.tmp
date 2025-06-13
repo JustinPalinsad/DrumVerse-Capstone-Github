@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://darhyyhwsws15"]
+
+[ext_resource type="PackedScene" uid="uid://44x2qmjj58uu" path="res://Note.tscn" id="1_c1d0f"]
+[ext_resource type="Script" uid="uid://vmxusyl2hsou" path="res://PracticeMode.gd" id="1_mq03u"]
+[ext_resource type="Texture2D" uid="uid://6owjqaogefuf" path="res://Assets/Drum.png" id="2_775u6"]
+[ext_resource type="Texture2D" uid="uid://b5hfnpt8wgo14" path="res://Assets/44.png" id="2_c1d0f"]
+[ext_resource type="PackedScene" uid="uid://djmsgau7df3od" path="res://HitEffect.tscn" id="2_xld3l"]
+[ext_resource type="PackedScene" uid="uid://cf6ggwnnu8f8k" path="res://MissEffect.tscn" id="3_4mhbh"]
+[ext_resource type="Script" uid="uid://casufrsw3l74d" path="res://Scripts/moving_circle.gd" id="4_21541"]
+[ext_resource type="Texture2D" uid="uid://battv6y8amyfm" path="res://Assets/vecteezy_geometric-design-element_21048718.png" id="5_xmax4"]
+[ext_resource type="Script" uid="uid://wi8frc8of7kw" path="res://addons/trail_2d/trail_2d.gd" id="6_xmax4"]
+
+[sub_resource type="Curve" id="Curve_xmax4"]
+_data = [Vector2(0.0904255, 0.88764), 0.0, 0.0, 0, 0, Vector2(0.957447, 0.157303), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_xmax4"]
+offsets = PackedFloat32Array(0.16, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Practice Mode" type="Node2D"]
+script = ExtResource("1_mq03u")
+HitEffectScene = ExtResource("2_xld3l")
+MissEffectScene = ExtResource("3_4mhbh")
+
+[node name="Notes Container" parent="." instance=ExtResource("1_c1d0f")]
+
+[node name="Notes2" parent="Notes Container" instance=ExtResource("1_c1d0f")]
+
+[node name="Notes3" parent="Notes Container" instance=ExtResource("1_c1d0f")]
+
+[node name="Notes4" parent="Notes Container" instance=ExtResource("1_c1d0f")]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -4
+custom_minimum_size = Vector2(1920, 1080)
+offset_left = -398.0
+offset_top = -116.0
+offset_right = 1522.0
+offset_bottom = 964.0
+color = Color(1, 0.945098, 0.572549, 1)
+metadata/_edit_lock_ = true
+
+[node name="44" type="TextureRect" parent="."]
+offset_left = 157.0
+offset_top = 166.0
+offset_right = 1060.0
+offset_bottom = 295.0
+texture = ExtResource("2_c1d0f")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="HitEffect" parent="." instance=ExtResource("2_xld3l")]
+
+[node name="MissEffect" parent="." instance=ExtResource("3_4mhbh")]
+
+[node name="MovingCircle" type="Node2D" parent="."]
+z_index = 3
+script = ExtResource("4_21541")
+
+[node name="Circle" type="Sprite2D" parent="MovingCircle"]
+z_index = 1
+position = Vector2(165, 288.676)
+scale = Vector2(0.00496352, 0.00496352)
+texture = ExtResource("5_xmax4")
+
+[node name="Trail2D" type="Line2D" parent="MovingCircle/Circle"]
+width_curve = SubResource("Curve_xmax4")
+gradient = SubResource("Gradient_xmax4")
+script = ExtResource("6_xmax4")
+metadata/_custom_type_script = "uid://wi8frc8of7kw"
+
+[node name="Drum" type="TextureRect" parent="."]
+offset_left = -80.0
+offset_top = 402.0
+offset_right = 264.0
+offset_bottom = 707.0
+texture = ExtResource("2_775u6")
+expand_mode = 1
+
+[node name="Drum Right" type="TextureRect" parent="."]
+offset_left = 893.0
+offset_top = 402.0
+offset_right = 1237.0
+offset_bottom = 707.0
+texture = ExtResource("2_775u6")
+expand_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BPMLabel" type="Label" parent="CanvasLayer"]
+offset_left = 968.0
+offset_top = 9.0
+offset_right = 1146.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "BPM: 120"

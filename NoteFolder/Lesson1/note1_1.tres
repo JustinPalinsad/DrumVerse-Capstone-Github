@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DrumNote" load_steps=3 format=3 uid="uid://cn5e3mjwr6jsu"]
+
+[ext_resource type="PackedScene" uid="uid://biq2jy3uh3cxn" path="res://NoteScene/quarter_note.tscn" id="1_di60v"]
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="2_v6luq"]
+
+[resource]
+script = ExtResource("2_v6luq")
+x_position = 441.0
+note_scene = ExtResource("1_di60v")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"

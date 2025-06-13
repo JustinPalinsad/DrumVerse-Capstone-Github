@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://b0hlljlccxla1"]
+
+[ext_resource type="Resource" uid="uid://l42w8laaco37" path="res://Module/Lesson1/continuebar1_1.tres" id="1_sxdu3"]
+[ext_resource type="Resource" uid="uid://b4kdsst2wroew" path="res://Module/Lesson1/continuebar1_2.tres" id="2_mxaa5"]
+[ext_resource type="Resource" uid="uid://bu8wtl5dy8u6l" path="res://Module/Lesson1/continuebar1_3.tres" id="3_7jax1"]
+[ext_resource type="Resource" uid="uid://shpcsriuugf8" path="res://Module/Lesson1/endbar1.tres" id="4_yn63u"]
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="5_dn4sl"]
+
+[resource]
+script = ExtResource("5_dn4sl")
+title_text = "Lesson 1"
+top_texts = Array[String](["This is a whole note", "like this"])
+bottom_texts = Array[String](["A whole note is the longest note we'll learn. It lasts for 4 counts. That means you hit once... and wait. This is a whole note. It has no stem—just the round head.", "This will always be tapped on the 1st beat of the 4/4 beat", "So that means tap on the 1 and wait for the count to return to one"])
+demo_bars = Array[Resource]([ExtResource("1_sxdu3"), ExtResource("2_mxaa5"), ExtResource("3_7jax1"), ExtResource("4_yn63u")])
+show_note_labels = false
+slide3_message = "Now try Practice Mode first before proceeding to Challenge Mode."

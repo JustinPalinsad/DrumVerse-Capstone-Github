@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="HitlineData" load_steps=5 format=3 uid="uid://bu8wtl5dy8u6l"]
+
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_1fq1r"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="2_3tg6y"]
+[ext_resource type="PackedScene" uid="uid://ehclb0g7ngkv" path="res://NoteScene/whole_note.tscn" id="2_o2y8w"]
+
+[sub_resource type="Resource" id="Resource_o2y8w"]
+script = ExtResource("1_1fq1r")
+required_pad = "both"
+x_position = 581.0
+note_scene = ExtResource("2_o2y8w")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[resource]
+script = ExtResource("2_3tg6y")
+notes = Array[ExtResource("1_1fq1r")]([SubResource("Resource_o2y8w")])
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"

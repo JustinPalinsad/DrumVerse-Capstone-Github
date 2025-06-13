@@ -1,0 +1,296 @@
+[gd_scene load_steps=19 format=3 uid="uid://cy6rnul4iyn7q"]
+
+[ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="1_akhtc"]
+[ext_resource type="Script" uid="uid://bvukgvf67mb2h" path="res://Menu Scripts/main_menu.gd" id="1_l382o"]
+[ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="2_1vplf"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_8mjjn"]
+[ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_a3nca"]
+[ext_resource type="Texture2D" uid="uid://j2pp7ff004s1" path="res://Menu Assets/Settings.png" id="3_3kuvd"]
+[ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_i72bd"]
+[ext_resource type="Texture2D" uid="uid://chbuypf6vnbax" path="res://Menu Assets/Left Button (1).png" id="4_3kuvd"]
+[ext_resource type="Texture2D" uid="uid://086irdnm1fxk" path="res://Menu Assets/Right Button (1).png" id="5_5riwd"]
+[ext_resource type="Texture2D" uid="uid://bdux1ufjgb5et" path="res://Menu Assets/drum bg.png" id="5_i72bd"]
+[ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="8_8mjjn"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="12_i72bd"]
+[ext_resource type="Texture2D" uid="uid://battv6y8amyfm" path="res://Assets/vecteezy_geometric-design-element_21048718.png" id="12_l382o"]
+[ext_resource type="AudioStream" uid="uid://co282gm4j7ur8" path="res://Audio/opening_sound.wav" id="13_cv22u"]
+[ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="14_i72bd"]
+
+[sub_resource type="Animation" id="Animation_afnto"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Notes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(672, 256)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Notes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Play:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1368, 352)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Play:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.68, 0.68)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1928, 352)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.68, 0.68)]
+}
+
+[sub_resource type="Animation" id="Animation_5riwd"]
+resource_name = "menu_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Notes:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(672, 256), Vector2(160, 352), Vector2(-400, 352)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Notes:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.68, 0.68), Vector2(0.68, 0.68)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Play:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1368, 352), Vector2(672, 256), Vector2(160, 352)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Play:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.68, 0.68), Vector2(1, 1), Vector2(0.68, 0.68)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Settings:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1928, 352), Vector2(1368, 352), Vector2(672, 256)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Settings:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.68, 0.68), Vector2(0.68, 0.68), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8mjjn"]
+_data = {
+&"RESET": SubResource("Animation_afnto"),
+&"menu_animation": SubResource("Animation_5riwd")
+}
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l382o")
+
+[node name="bg2" type="TextureRect" parent="."]
+material = ExtResource("2_8mjjn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i72bd")
+
+[node name="MenuBg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.258824)
+material = ExtResource("2_a3nca")
+layout_mode = 0
+offset_left = -38.0
+offset_top = -15.0
+offset_right = 3191.0
+offset_bottom = 1801.0
+scale = Vector2(0.620382, 0.624595)
+texture = ExtResource("5_i72bd")
+
+[node name="Selection Container" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Notes" type="TouchScreenButton" parent="Selection Container"]
+material = ExtResource("2_8mjjn")
+position = Vector2(672, 256)
+texture_normal = ExtResource("1_akhtc")
+
+[node name="Play" type="TouchScreenButton" parent="Selection Container"]
+material = ExtResource("2_8mjjn")
+position = Vector2(1368, 352)
+scale = Vector2(0.68, 0.68)
+texture_normal = ExtResource("2_1vplf")
+
+[node name="Settings" type="TouchScreenButton" parent="Selection Container"]
+material = ExtResource("2_8mjjn")
+position = Vector2(1928, 352)
+scale = Vector2(0.68, 0.68)
+texture_normal = ExtResource("3_3kuvd")
+
+[node name="Selection Animation" type="AnimationPlayer" parent="Selection Container"]
+libraries = {
+&"": SubResource("AnimationLibrary_8mjjn")
+}
+
+[node name="LeftButton" type="TouchScreenButton" parent="Selection Container"]
+material = ExtResource("2_8mjjn")
+position = Vector2(288, 864)
+texture_normal = ExtResource("4_3kuvd")
+action = "ui_left"
+
+[node name="RightButton" type="TouchScreenButton" parent="Selection Container"]
+modulate = Color(1, 0.752941, 0.145098, 1)
+material = ExtResource("2_8mjjn")
+position = Vector2(1448, 864)
+texture_normal = ExtResource("5_5riwd")
+action = "ui_right"
+
+[node name="SelectButton" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 672.0
+offset_top = 256.0
+offset_right = 1144.0
+offset_bottom = 656.0
+scale = Vector2(1.23111, 1.46356)
+
+[node name="SelectionTitle" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="SelectionTitle"]
+material = ExtResource("2_8mjjn")
+layout_mode = 2
+texture = ExtResource("8_8mjjn")
+
+[node name="Back" type="TouchScreenButton" parent="."]
+material = ExtResource("2_8mjjn")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("12_i72bd")
+
+[node name="LeftB" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(97, 353)
+scale = Vector2(0.180149, 0.180149)
+texture_normal = ExtResource("12_l382o")
+action = "ui_left"
+
+[node name="RightB" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1376, 353)
+scale = Vector2(0.166594, 0.166594)
+texture_normal = ExtResource("12_l382o")
+action = "ui_right"
+
+[node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_cv22u")
+
+[node name="BackSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_i72bd")
+
+[connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

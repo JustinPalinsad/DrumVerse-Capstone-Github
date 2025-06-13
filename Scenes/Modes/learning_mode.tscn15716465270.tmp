@@ -1,0 +1,170 @@
+[gd_scene load_steps=15 format=3 uid="uid://c7btabnu0ylc5"]
+
+[ext_resource type="Script" uid="uid://cdu53573apcnl" path="res://Scenes/Modes/learning_mode.gd" id="1_qncf5"]
+[ext_resource type="Resource" uid="uid://b0hlljlccxla1" path="res://Module/LearningMode/Lesson1/Module1_Learning.tres" id="2_60euo"]
+[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="2_qncf5"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="2_x1tyl"]
+[ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="3_60euo"]
+[ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="3_m85b6"]
+[ext_resource type="PackedScene" uid="uid://djmsgau7df3od" path="res://Scenes/Shared/HitEffect.tscn" id="3_vifvf"]
+[ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="4_wemw5"]
+[ext_resource type="PackedScene" uid="uid://m3vdw1jlra6r" path="res://Scenes/Shared/drum_pad.tscn" id="6_60euo"]
+[ext_resource type="AudioStream" uid="uid://cdrej3iwbfjfn" path="res://Audio/metronomes 0.25 ver/60 BPM.mp3" id="8_vifvf"]
+[ext_resource type="Texture2D" uid="uid://pd44c4n60aw5" path="res://Assets/replay (1).png" id="9_m85b6"]
+
+[sub_resource type="Animation" id="Animation_1bqq7"]
+length = 4.0
+loop_mode = 1
+
+[sub_resource type="Animation" id="Animation_m85b6"]
+resource_name = "moving_circle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.25, 2.25, 3.25, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(460, 499), Vector2(532, 499), Vector2(836, 499), Vector2(1135, 499), Vector2(1434, 499), Vector2(1662, 499)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vifvf"]
+_data = {
+&"RESET": SubResource("Animation_1bqq7"),
+&"moving_circle": SubResource("Animation_m85b6")
+}
+
+[node name="LearningMode" type="Node2D"]
+script = ExtResource("1_qncf5")
+learning_module = ExtResource("2_60euo")
+hit_effect_scene = ExtResource("3_vifvf")
+metadata/_edit_vertical_guides_ = [246.0, 1764.0]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -7
+offset_left = -104.0
+offset_top = -41.0
+offset_right = 2011.0
+offset_bottom = 1183.0
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 246.0
+offset_top = 316.0
+offset_right = 1742.0
+offset_bottom = 507.0
+texture = ExtResource("3_m85b6")
+expand_mode = 1
+
+[node name="ReplayButton" type="Button" parent="."]
+offset_left = 927.0
+offset_top = 620.0
+offset_right = 1447.0
+offset_bottom = 1140.0
+scale = Vector2(0.226979, 0.226979)
+icon = ExtResource("9_m85b6")
+flat = true
+
+[node name="SlideControl" type="CanvasLayer" parent="."]
+
+[node name="TitleLabel" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 661.0
+offset_top = 16.0
+offset_right = 1271.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TopLabel" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 271.0
+offset_top = 175.0
+offset_right = 881.0
+offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomLabel" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+anchors_preset = -1
+anchor_top = -0.0305556
+anchor_bottom = -0.0305556
+offset_left = 285.0
+offset_top = 634.0
+offset_right = 1694.0
+offset_bottom = 815.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="PatternLabel" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+anchors_preset = -1
+anchor_bottom = 0.00185185
+offset_left = 285.0
+offset_top = 527.0
+offset_right = 1694.0
+offset_bottom = 649.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="NotesContainer" type="Node2D" parent="."]
+
+[node name="Metronome" parent="." instance=ExtResource("3_60euo")]
+position = Vector2(1779, 121)
+scale = Vector2(0.25, 0.25)
+
+[node name="LearningTickPlayer" type="AudioStreamPlayer" parent="Metronome"]
+stream = ExtResource("8_vifvf")
+
+[node name="HitLine" parent="." instance=ExtResource("2_qncf5")]
+position = Vector2(994, 411)
+scale = Vector2(0.47, 0.47)
+
+[node name="BPMLabel" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 1702.0
+offset_top = 215.0
+offset_right = 1830.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 30
+text = "BPM:"
+vertical_alignment = 1
+
+[node name="EffectsContainer" type="Node2D" parent="."]
+
+[node name="LeftPad" parent="." instance=ExtResource("6_60euo")]
+position = Vector2(100, 956)
+scale = Vector2(0.5, 0.5)
+
+[node name="RightPad" parent="." instance=ExtResource("6_60euo")]
+position = Vector2(1811, 947)
+scale = Vector2(0.5, 0.5)
+
+[node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
+position = Vector2(460, 499)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
+libraries = {
+&"": SubResource("AnimationLibrary_vifvf")
+}

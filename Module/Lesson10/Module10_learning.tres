@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://cl2xv4sjdkoit"]
+
+[ext_resource type="Resource" uid="uid://de3wa0s3b1ylt" path="res://Module/Lesson10/continuebar10_4.tres" id="1_0lpwd"]
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_jtlq0"]
+[ext_resource type="Resource" uid="uid://gx3cgwpjm2e" path="res://Module/Lesson10/continuebar10_1_2.tres" id="2_d0tsq"]
+[ext_resource type="Resource" uid="uid://cghiflm5cbcm" path="res://Module/Lesson10/continuebar10_1_3.tres" id="3_nj2n6"]
+[ext_resource type="Resource" uid="uid://w031s2pd7sfi" path="res://Module/Lesson10/endbar10_1.tres" id="4_rqpxl"]
+
+[resource]
+script = ExtResource("1_jtlq0")
+title_text = "Lesson 10"
+top_texts = Array[String](["\"The last rudiment is the flam. ", "Like this"])
+bottom_texts = Array[String](["This is a special type of note where one hand taps slightly before the other.", "You’ll hear a 'grace note' followed by a full hit.", "It sounds like 'ba-DUM', not just 'DUM'.", "Flams make your drumming sound expressive and professional.", "Try tapping with one quiet tap, followed by a louder one. ", "Left-right... right-left... That’s a flam!"])
+demo_bars = Array[Resource]([ExtResource("1_0lpwd"), ExtResource("2_d0tsq"), ExtResource("3_nj2n6"), ExtResource("4_rqpxl")])
+show_note_labels = true
+slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

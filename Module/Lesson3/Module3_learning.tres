@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://d33i8kidca3ry"]
+
+[ext_resource type="Resource" uid="uid://x3mg51yq4bas" path="res://Module/Lesson3/continuebar3_1.tres" id="1_7pdf1"]
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_q6ick"]
+[ext_resource type="Resource" uid="uid://brfuerkfo4kcp" path="res://Module/Lesson3/continuebar3_2.tres" id="2_ec2da"]
+[ext_resource type="Resource" uid="uid://covm8buf6qqho" path="res://Module/Lesson3/continuebar3_3.tres" id="3_cmg6h"]
+[ext_resource type="Resource" uid="uid://ob42ymtxb0kv" path="res://Module/Lesson3/endbar3.tres" id="4_2gueo"]
+
+[resource]
+script = ExtResource("1_q6ick")
+title_text = "Lesson 3"
+top_texts = Array[String](["A quarter note is the most common beat in music. ", "Like this:"])
+bottom_texts = Array[String]([" It gets 1 beat per count. as you count, you also hit. ", "Now you see the note with a shaded head and a stem ", "You hit one time for every number you count.   '1 – 2 – 3 – 4' ", "Tap four quarter notes, one on each count."])
+demo_bars = Array[Resource]([ExtResource("1_7pdf1"), ExtResource("2_ec2da"), ExtResource("3_cmg6h"), ExtResource("4_2gueo")])
+slide3_message = "Now Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

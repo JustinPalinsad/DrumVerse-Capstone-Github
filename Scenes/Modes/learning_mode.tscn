@@ -1,0 +1,281 @@
+[gd_scene load_steps=26 format=3 uid="uid://c7btabnu0ylc5"]
+
+[ext_resource type="Script" uid="uid://cdu53573apcnl" path="res://Scenes/Modes/learning_mode.gd" id="1_qncf5"]
+[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="2_qncf5"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="2_x1tyl"]
+[ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="3_60euo"]
+[ext_resource type="PackedScene" uid="uid://djmsgau7df3od" path="res://Scenes/Shared/HitEffect.tscn" id="3_vifvf"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="4_71jwu"]
+[ext_resource type="Texture2D" uid="uid://c50xwsd8ovjug" path="res://Assets/MesCon (3).png" id="4_q10fe"]
+[ext_resource type="PackedScene" uid="uid://cf6ggwnnu8f8k" path="res://Scenes/Shared/MissEffect.tscn" id="4_ud0be"]
+[ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="4_wemw5"]
+[ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="5_vd5sb"]
+[ext_resource type="Texture2D" uid="uid://uxracv1yjdng" path="res://Assets/Replay.png" id="6_71jwu"]
+[ext_resource type="FontFile" uid="uid://blpqqpdiclhio" path="res://Font/San Marino.otf" id="7_kgv2n"]
+[ext_resource type="AudioStream" uid="uid://cdrej3iwbfjfn" path="res://Audio/metronomes 0.25 ver/60 BPM.mp3" id="8_vifvf"]
+[ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="12_q7mwf"]
+[ext_resource type="PackedScene" uid="uid://bo17u5xw8qqc6" path="res://NoteScene/sixteenth_note.tscn" id="13_kpxic"]
+[ext_resource type="PackedScene" uid="uid://d1s4ulk21f4pq" path="res://NoteScene/eight_note.tscn" id="13_q10fe"]
+[ext_resource type="PackedScene" uid="uid://biq2jy3uh3cxn" path="res://NoteScene/quarter_note.tscn" id="15_q7mwf"]
+[ext_resource type="PackedScene" uid="uid://k38i08o3l2w" path="res://NoteScene/triple_note.tscn" id="15_ufs4h"]
+[ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="16_ufs4h"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="18_kgv2n"]
+
+[sub_resource type="Animation" id="Animation_1bqq7"]
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(541, 488)]
+}
+
+[sub_resource type="Animation" id="Animation_m85b6"]
+resource_name = "moving_circle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 1.25, 2.25, 3.25, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(517, 488), Vector2(581, 488), Vector2(835, 488), Vector2(1092, 488), Vector2(1349, 488), Vector2(1574, 488)]
+}
+
+[sub_resource type="Animation" id="Animation_vifvf"]
+resource_name = "moving_circle_120"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(605, 488), Vector2(860, 488), Vector2(1115, 488), Vector2(1371, 488), Vector2(1597, 488)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vifvf"]
+_data = {
+&"RESET": SubResource("Animation_1bqq7"),
+&"moving_circle": SubResource("Animation_m85b6"),
+&"moving_circle_120": SubResource("Animation_vifvf")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ud0be"]
+radius = 19.0
+
+[node name="LearningMode" type="Node2D"]
+script = ExtResource("1_qncf5")
+hit_effect_scene = ExtResource("3_vifvf")
+miss_effect_scene = ExtResource("4_ud0be")
+metadata/_edit_vertical_guides_ = [335.0, 1617.0, 256.0]
+metadata/_edit_horizontal_guides_ = [328.0]
+
+[node name="Background" type="ColorRect" parent="."]
+visible = false
+z_index = -7
+offset_left = -104.0
+offset_top = -41.0
+offset_right = 2011.0
+offset_bottom = 1183.0
+mouse_filter = 2
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="bg" type="TextureRect" parent="."]
+material = ExtResource("4_71jwu")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -107.0
+offset_top = -47.0
+offset_right = 118.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(9.64669, 5.47508)
+texture = ExtResource("5_vd5sb")
+
+[node name="EffectsContainer" type="Node2D" parent="."]
+
+[node name="NotesContainer" type="Node2D" parent="."]
+
+[node name="ReplayButton" type="Button" parent="."]
+material = ExtResource("4_71jwu")
+offset_left = 925.0
+offset_top = 679.0
+offset_right = 1093.0
+offset_bottom = 890.0
+scale = Vector2(0.744876, 0.744876)
+icon = ExtResource("6_71jwu")
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+offset_left = 171.0
+offset_top = -16.0
+offset_right = 1813.0
+offset_bottom = 1000.0
+texture = ExtResource("4_q10fe")
+expand_mode = 1
+
+[node name="SlideControl" type="CanvasLayer" parent="."]
+
+[node name="TitleLabel" type="Label" parent="SlideControl"]
+material = ExtResource("4_71jwu")
+anchors_preset = -1
+anchor_right = 0.0109375
+offset_left = 661.0
+offset_top = 16.0
+offset_right = 1271.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="TopLabel" type="Label" parent="SlideControl"]
+material = ExtResource("4_71jwu")
+anchors_preset = -1
+anchor_left = 0.040625
+anchor_top = -0.0490741
+anchor_right = 0.390625
+anchor_bottom = 0.0259259
+offset_left = 255.0
+offset_top = 194.0
+offset_right = 865.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("7_kgv2n")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="BottomLabel" type="Label" parent="SlideControl"]
+material = ExtResource("4_71jwu")
+anchors_preset = -1
+anchor_top = -0.0305556
+anchor_bottom = -0.0305556
+offset_left = 276.0
+offset_top = 634.0
+offset_right = 1685.0
+offset_bottom = 815.0
+theme_override_fonts/font = ExtResource("7_kgv2n")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Slide3Label" type="Label" parent="SlideControl"]
+material = ExtResource("4_71jwu")
+offset_left = 292.0
+offset_top = 338.0
+offset_right = 1709.0
+offset_bottom = 663.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
+[node name="Metronome" parent="." instance=ExtResource("3_60euo")]
+position = Vector2(1751, 143)
+scale = Vector2(0.281951, 0.281951)
+
+[node name="LearningTickPlayer" type="AudioStreamPlayer" parent="Metronome"]
+stream = ExtResource("8_vifvf")
+
+[node name="HitLine" parent="." instance=ExtResource("2_qncf5")]
+position = Vector2(972, 411)
+scale = Vector2(0.4, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="BPMLabel" type="Label" parent="."]
+material = ExtResource("4_71jwu")
+offset_left = 1658.0
+offset_top = 239.0
+offset_right = 1835.0
+offset_bottom = 292.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 40
+text = "BPM: 60"
+vertical_alignment = 1
+
+[node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
+position = Vector2(541, 488)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
+libraries = {
+&"": SubResource("AnimationLibrary_vifvf")
+}
+
+[node name="HitArea" type="Area2D" parent="MovingCircle"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
+shape = SubResource("CircleShape2D_ud0be")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="HitSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_q7mwf")
+
+[node name="EightNote" parent="." instance=ExtResource("13_q10fe")]
+visible = false
+position = Vector2(686, 69)
+
+[node name="SixteenthNote" parent="." instance=ExtResource("13_kpxic")]
+visible = false
+position = Vector2(980, 93)
+
+[node name="TripleNote" parent="." instance=ExtResource("15_ufs4h")]
+visible = false
+position = Vector2(699, 105)
+
+[node name="NotePatternLabel" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 516.0
+offset_top = 587.0
+offset_right = 1613.0
+offset_bottom = 678.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="QuarterNote" parent="." instance=ExtResource("15_q7mwf")]
+visible = false
+position = Vector2(1376, -46)
+
+[node name="QuarterNote4" parent="." instance=ExtResource("16_ufs4h")]
+visible = false
+position = Vector2(1356, -33)
+
+[node name="Back" type="TouchScreenButton" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+position = Vector2(92, 66)
+scale = Vector2(0.529703, 0.529703)
+texture_normal = ExtResource("18_kgv2n")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://b1tjeenqx2ndl"]
+
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_4xrgy"]
+[ext_resource type="Resource" uid="uid://dailyidl6qra" path="res://Module/Lesson5/continuebar5_1.tres" id="1_46u0o"]
+[ext_resource type="Resource" uid="uid://diiwy615vpp0e" path="res://Module/Lesson5/continuebar5_2.tres" id="2_nlk2b"]
+[ext_resource type="Resource" uid="uid://mjlvvwajyvfb" path="res://Module/Lesson5/continuebar5_3.tres" id="3_bmq46"]
+[ext_resource type="Resource" uid="uid://upjxdqsavfao" path="res://Module/Lesson5/endbar5.tres" id="4_foy3c"]
+
+[resource]
+script = ExtResource("1_4xrgy")
+title_text = "Lesson 5"
+top_texts = Array[String](["Now we’re speeding up!", "It sounds like this:"])
+bottom_texts = Array[String](["Sixteenth notes fit four hits in every beat — that’s sixteen per bar.", "They have a shaded head, a stem, and two tails.", "Grouped together, they’re joined with two beams.", "Count them like this:", "“1-e-and-a 2-e-and-a 3-e-and-a 4-e-and-a”", "That’s four notes per beat — fast, tight, and perfect for sharp grooves."])
+demo_bars = Array[Resource]([ExtResource("1_46u0o"), ExtResource("2_nlk2b"), ExtResource("3_bmq46"), ExtResource("4_foy3c")])
+slide3_message = "Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

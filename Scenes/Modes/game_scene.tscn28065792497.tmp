@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://12gneqnb4n55"]
+
+[ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_lsk3b"]
+[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="2_kibmt"]
+[ext_resource type="PackedScene" uid="uid://m3vdw1jlra6r" path="res://Scenes/Shared/drum_pad.tscn" id="3_jj1xe"]
+[ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="4_ewxye"]
+[ext_resource type="PackedScene" uid="uid://cf6ggwnnu8f8k" path="res://Scenes/Shared/MissEffect.tscn" id="5_lsk3b"]
+[ext_resource type="PackedScene" uid="uid://djmsgau7df3od" path="res://Scenes/Shared/HitEffect.tscn" id="6_maw7i"]
+[ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="7_ewxye"]
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_lsk3b")
+metadata/_edit_vertical_guides_ = [-185.0]
+metadata/_edit_horizontal_guides_ = [627.0]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -85.0
+offset_top = -48.0
+offset_right = 1958.0
+offset_bottom = 1121.0
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="NotesContainer" type="Node2D" parent="."]
+
+[node name="HitLine" parent="." instance=ExtResource("2_kibmt")]
+position = Vector2(972, 366)
+scale = Vector2(0.4, 0.4)
+
+[node name="LeftPad" parent="." instance=ExtResource("3_jj1xe")]
+position = Vector2(121, 954)
+scale = Vector2(0.5, 0.5)
+
+[node name="RightPad" parent="." instance=ExtResource("3_jj1xe")]
+position = Vector2(1800, 947)
+scale = Vector2(0.5, 0.5)
+
+[node name="MovingCircle" parent="." instance=ExtResource("4_ewxye")]
+position = Vector2(441, 442)
+
+[node name="MissEffect" parent="." instance=ExtResource("5_lsk3b")]
+position = Vector2(-146, 533)
+scale = Vector2(0.5, 0.5)
+
+[node name="HitEffect" parent="." instance=ExtResource("6_maw7i")]
+position = Vector2(-195, 388)
+
+[node name="Metronome" parent="." instance=ExtResource("7_ewxye")]
+position = Vector2(1752, 121)
+scale = Vector2(0.25, 0.25)

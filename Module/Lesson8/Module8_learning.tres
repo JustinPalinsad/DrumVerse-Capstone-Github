@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://b1rsdfa5hk1t7"]
+
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_vf62k"]
+[ext_resource type="Resource" uid="uid://bhduovrhpjjl3" path="res://Module/Lesson8/continuebar8_1.tres" id="1_xxeal"]
+[ext_resource type="Resource" uid="uid://c5m55nupxvk80" path="res://Module/Lesson8/continuebar8_2.tres" id="2_dtn7u"]
+[ext_resource type="Resource" uid="uid://b046idk7n83va" path="res://Module/Lesson8/continuebar8_3.tres" id="3_sfdxe"]
+[ext_resource type="Resource" uid="uid://d0yt2mpx1k2s8" path="res://Module/Lesson8/endbar8.tres" id="4_cmrbr"]
+
+[resource]
+script = ExtResource("1_vf62k")
+title_text = "Lesson 8"
+top_texts = Array[String](["Next is the double stroke roll", "Like this"])
+bottom_texts = Array[String](["This time, each hand plays two times before switching.", "Right, Right – Left, Left… or R-R-L-L.", "It trains your hands to bounce and control your stick better."])
+demo_bars = Array[Resource]([ExtResource("1_xxeal"), ExtResource("2_dtn7u"), ExtResource("3_sfdxe"), ExtResource("4_cmrbr")])
+show_note_labels = true
+slide3_message = "now Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

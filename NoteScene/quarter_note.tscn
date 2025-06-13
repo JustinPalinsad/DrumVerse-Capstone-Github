@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://biq2jy3uh3cxn"]
+
+[ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_2bigr"]
+[ext_resource type="Texture2D" uid="uid://bfe33it6jxmc1" path="res://Assets/4Note.png" id="1_76d5x"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_p4i4v"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="3_f06k2"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_wdtna"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_76d5x"]
+radius = 23.2537
+height = 57.2683
+
+[node name="QuarterNote" type="Node2D"]
+script = ExtResource("1_2bigr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_p4i4v")
+position = Vector2(0, -48.6)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_76d5x")
+
+[node name="BeamContainer" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
+position = Vector2(0, -3.6)
+script = ExtResource("3_f06k2")
+parent_note = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
+position = Vector2(-1, 2.6)
+rotation = -1.99303
+shape = SubResource("CapsuleShape2D_76d5x")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_wdtna")
+theme_override_font_sizes/font_size = 30

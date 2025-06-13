@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhx8f0wbdynij"]
+
+[ext_resource type="Texture2D" uid="uid://coflnl7b1t7ou" path="res://Assets/PLAY_mm.png" id="1_28flt"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -4
+offset_left = -96.0
+offset_top = -148.0
+offset_right = 1268.0
+offset_bottom = 744.0
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 48.0
+offset_top = -102.0
+offset_right = 1056.0
+offset_bottom = 786.0
+texture = ExtResource("1_28flt")

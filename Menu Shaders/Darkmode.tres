@@ -1,0 +1,36 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cop04xagchvm4"]
+
+[sub_resource type="Shader" id="Shader_mgsxb"]
+code = "shader_type canvas_item;
+
+uniform vec4 og_color : source_color;
+uniform vec4 new_color : source_color;
+uniform vec4 og_color2 : source_color;
+uniform vec4 new_color2 : source_color;
+uniform float tolerance : hint_range(0.0, 1.0) = 0.05;
+
+void fragment() {
+    vec4 curr_color = texture(TEXTURE, UV);
+
+    float diff1 = distance(curr_color.rgb, og_color.rgb);
+    float diff2 = distance(curr_color.rgb, og_color2.rgb);
+	
+    vec3 final_rgb = curr_color.rgb;
+
+    if (diff1 < tolerance) {
+        final_rgb = new_color.rgb;
+    } else if (diff2 < tolerance) {
+        final_rgb = new_color2.rgb;
+    }
+
+    COLOR = vec4(final_rgb, curr_color.a);
+}
+"
+
+[resource]
+shader = SubResource("Shader_mgsxb")
+shader_parameter/og_color = Color(0, 0, 0, 1)
+shader_parameter/new_color = Color(0.188235, 0.0901961, 0.0470588, 1)
+shader_parameter/og_color2 = Color(1, 1, 1, 1)
+shader_parameter/new_color2 = Color(1, 0.752941, 0.145098, 1)
+shader_parameter/tolerance = 1.0

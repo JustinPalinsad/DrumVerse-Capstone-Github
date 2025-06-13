@@ -1,0 +1,184 @@
+[gd_scene load_steps=15 format=3 uid="uid://b2auy1v2ih4mq"]
+
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="1_t8d06"]
+[ext_resource type="Texture2D" uid="uid://bw88j21ejf4db" path="res://Menu Assets/Title_Full.png" id="1_v5vr5"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="2_j7ve0"]
+[ext_resource type="Script" uid="uid://bjknw2ufvrid6" path="res://Menu Scripts/title_screen.gd" id="2_t8d06"]
+[ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_bt1m7"]
+[ext_resource type="Texture2D" uid="uid://brgnm7s6r367t" path="res://Menu Assets/Icon_Bg.png" id="4_2teth"]
+[ext_resource type="AudioStream" uid="uid://dvgqg4u0q0qwp" path="res://Audio/tr808-snare-drum-241403.mp3" id="6_swmdy"]
+
+[sub_resource type="Animation" id="Animation_t8d06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(970, 592)]
+}
+
+[sub_resource type="Animation" id="Animation_2teth"]
+resource_name = "drum_bounce_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(970, 592), Vector2(970, 672), Vector2(970, 505), Vector2(970, 592)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_swmdy"]
+_data = {
+&"RESET": SubResource("Animation_t8d06"),
+&"drum_bounce_animation": SubResource("Animation_2teth")
+}
+
+[sub_resource type="Animation" id="Animation_tfv06"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tap Anywhere:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_bt1m7"]
+resource_name = "text_blink_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tap Anywhere:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_w6uyo"]
+resource_name = "text_blink_faster_animation"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Tap Anywhere:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, false, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v3w66"]
+_data = {
+&"RESET": SubResource("Animation_tfv06"),
+&"text_blink_animation": SubResource("Animation_bt1m7"),
+&"text_blink_faster_animation": SubResource("Animation_w6uyo")
+}
+
+[node name="Title Screen" type="Control"]
+material = ExtResource("1_t8d06")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_t8d06")
+
+[node name="bg2" type="TextureRect" parent="."]
+material = ExtResource("1_t8d06")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_bt1m7")
+
+[node name="Drum" type="Sprite2D" parent="."]
+material = ExtResource("1_t8d06")
+position = Vector2(970, 592)
+scale = Vector2(0.773303, 0.773303)
+texture = ExtResource("1_v5vr5")
+
+[node name="Drum Animation" type="AnimationPlayer" parent="Drum"]
+libraries = {
+&"": SubResource("AnimationLibrary_swmdy")
+}
+
+[node name="DrumVerse Text" type="Label" parent="."]
+material = ExtResource("1_t8d06")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.5
+offset_top = -87.0
+offset_right = 567.5
+offset_bottom = 87.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_j7ve0")
+theme_override_font_sizes/font_size = 166
+text = "DrumVerse"
+
+[node name="Tap Anywhere" type="Label" parent="."]
+material = ExtResource("1_t8d06")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = 132.0
+offset_right = 442.0
+offset_bottom = 223.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_j7ve0")
+theme_override_font_sizes/font_size = 86
+text = "-  Tap Anywhere  -"
+
+[node name="Text Animation" type="AnimationPlayer" parent="Tap Anywhere"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_v3w66")
+}
+
+[node name="Start Button" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(1, 2)
+scale = Vector2(1.58107, 0.889014)
+texture_normal = ExtResource("4_2teth")
+
+[node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_swmdy")
+
+[connection signal="pressed" from="Start Button" to="." method="_on_start_button_pressed"]

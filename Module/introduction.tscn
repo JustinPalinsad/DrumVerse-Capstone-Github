@@ -1,0 +1,187 @@
+[gd_scene load_steps=7 format=3 uid="uid://cckq562g617g5"]
+
+[ext_resource type="Script" uid="uid://bo0ytb52eyop5" path="res://Module/introduction.gd" id="1_sr1sv"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="2_25w24"]
+[ext_resource type="Texture2D" uid="uid://008fn3kyrh6l" path="res://Assets/arw.png" id="3_w2vso"]
+[ext_resource type="Texture2D" uid="uid://blthkb5bwvrjb" path="res://Assets/Continue.png" id="4_ypvs8"]
+[ext_resource type="Texture2D" uid="uid://bcrat02ymwnbc" path="res://Assets/Metronome_NoNum/Metronome_0000.png" id="5_sr1sv"]
+[ext_resource type="Texture2D" uid="uid://wljvuirpt75o" path="res://Assets/End.png" id="6_rr5vc"]
+
+[node name="Introduction" type="Node2D"]
+script = ExtResource("1_sr1sv")
+metadata/_edit_vertical_guides_ = [265.0, 1756.0]
+metadata/_edit_horizontal_guides_ = [371.0, 546.0]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -114.0
+offset_top = -62.0
+offset_right = 2062.0
+offset_bottom = 1158.0
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 316.0
+offset_top = 429.0
+offset_right = 1723.0
+offset_bottom = 650.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 50
+text = "BEFORE WE GET INTO THE DRUM PART, LET ME TELL YOU ABOUT THE PARTS OF A MUSIC SHEET IN DRUMS 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label1" type="Label" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 273.0
+offset_top = 177.0
+offset_right = 1756.0
+offset_bottom = 247.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 50
+text = "This is a bar and this is where we put the notes."
+
+[node name="Label2" type="Label" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 282.0
+offset_top = 649.0
+offset_right = 1743.0
+offset_bottom = 870.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 50
+text = "These two numbers on top of each other is called a Time signature in this game we will be focusing on the most used and basic time signature. The 4/4"
+autowrap_mode = 2
+
+[node name="Arrow" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 174.0
+offset_top = 658.0
+offset_right = 355.0
+offset_bottom = 720.0
+rotation = -0.699021
+texture = ExtResource("3_w2vso")
+expand_mode = 1
+
+[node name="ContinueBar" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 266.0
+offset_top = 375.0
+offset_right = 1755.0
+offset_bottom = 546.0
+texture = ExtResource("4_ypvs8")
+expand_mode = 1
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 313.0
+offset_top = 121.0
+offset_right = 1754.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 45
+text = "This is how we count the 4/4 time signature 1,2,3,4"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 313.0
+offset_top = 728.0
+offset_right = 1754.0
+offset_bottom = 972.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 45
+text = "This is the bpm and this will determine the speed of the music, ever wonder why there are slow and fast music and keep it steady the whole song?  This guy will be your friend"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Metronome" type="TextureRect" parent="."]
+visible = false
+offset_left = 783.0
+offset_top = 221.0
+offset_right = 1234.0
+offset_bottom = 727.0
+texture = ExtResource("5_sr1sv")
+expand_mode = 1
+
+[node name="Label5" type="Label" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 301.0
+offset_top = 197.0
+offset_right = 1742.0
+offset_bottom = 366.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 45
+text = "This is a bar line, this indicates the completion of counting a bar"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label6" type="Label" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 290.0
+offset_top = 625.0
+offset_right = 1731.0
+offset_bottom = 877.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 45
+text = "This is a Percussion Clef of Neutral Clef; this is used by the percussion group instruments. Mostly you will see a G clef, C clef or F clef but this is used only in string, brass and woodwind instruments."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Arrow2" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 1861.0
+offset_top = 194.0
+offset_right = 2042.0
+offset_bottom = 256.0
+rotation = -4.35727
+texture = ExtResource("3_w2vso")
+expand_mode = 1
+
+[node name="Arrow3" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 111.0
+offset_top = 609.0
+offset_right = 309.0
+offset_bottom = 677.0
+rotation = -7.14515
+texture = ExtResource("3_w2vso")
+expand_mode = 1
+
+[node name="EndBar" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 266.0
+offset_top = 375.0
+offset_right = 1755.0
+offset_bottom = 546.0
+texture = ExtResource("6_rr5vc")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 1470.0
+offset_top = 949.0
+offset_right = 1865.0
+offset_bottom = 1045.0
+theme_override_fonts/font = ExtResource("2_25w24")
+theme_override_font_sizes/font_size = 25
+text = "NEXT TO CONTINUE"
+flat = true

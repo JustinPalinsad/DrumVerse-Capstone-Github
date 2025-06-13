@@ -1,0 +1,164 @@
+[gd_scene load_steps=11 format=3 uid="uid://c7btabnu0ylc5"]
+
+[ext_resource type="Script" uid="uid://cdu53573apcnl" path="res://Scenes/Modes/learning_mode.gd" id="1_qncf5"]
+[ext_resource type="Resource" uid="uid://b0hlljlccxla1" path="res://Module/LearningMode/Lesson1/Module1_Learning.tres" id="2_60euo"]
+[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="2_qncf5"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="2_x1tyl"]
+[ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="3_60euo"]
+[ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="4_wemw5"]
+[ext_resource type="PackedScene" uid="uid://m3vdw1jlra6r" path="res://Scenes/Shared/drum_pad.tscn" id="6_60euo"]
+
+[sub_resource type="Animation" id="Animation_m85b6"]
+resource_name = "moving_circle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(565, 462), Vector2(858, 462), Vector2(1151, 462), Vector2(1444, 462), Vector2(1737, 462)]
+}
+
+[sub_resource type="Animation" id="Animation_1bqq7"]
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(582, 464)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vifvf"]
+_data = {
+&"RESET": SubResource("Animation_1bqq7"),
+&"moving_circle": SubResource("Animation_m85b6")
+}
+
+[node name="LearningMode" type="Node2D"]
+script = ExtResource("1_qncf5")
+learning_module = ExtResource("2_60euo")
+metadata/_edit_vertical_guides_ = [246.0, 1764.0]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -7
+offset_left = -104.0
+offset_top = -41.0
+offset_right = 2011.0
+offset_bottom = 1183.0
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="SlideControl" type="CanvasLayer" parent="."]
+
+[node name="Metronome" parent="SlideControl" instance=ExtResource("3_60euo")]
+position = Vector2(1808, 121)
+scale = Vector2(0.25, 0.25)
+
+[node name="TitleLabel" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 661.0
+offset_right = 1271.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TopLabel" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 271.0
+offset_top = 175.0
+offset_right = 881.0
+offset_bottom = 228.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomLabel1" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 285.0
+offset_top = 517.0
+offset_right = 1694.0
+offset_bottom = 698.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomLabel2" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 285.0
+offset_top = 741.0
+offset_right = 1694.0
+offset_bottom = 850.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="BottomLabel3" type="Label" parent="SlideControl"]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 285.0
+offset_top = 911.0
+offset_right = 1694.0
+offset_bottom = 1033.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="NotesContainer" type="Node2D" parent="."]
+
+[node name="HitLine" parent="." instance=ExtResource("2_qncf5")]
+position = Vector2(994, 374)
+scale = Vector2(0.47, 0.47)
+
+[node name="BPMLabel" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 1731.0
+offset_top = 215.0
+offset_right = 1859.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("2_x1tyl")
+theme_override_font_sizes/font_size = 30
+text = "BPM:"
+vertical_alignment = 1
+
+[node name="EffectsContainer" type="Node2D" parent="."]
+
+[node name="LeftPad" parent="." instance=ExtResource("6_60euo")]
+visible = false
+position = Vector2(100, 968)
+scale = Vector2(0.5, 0.5)
+
+[node name="RightPad" parent="." instance=ExtResource("6_60euo")]
+visible = false
+position = Vector2(1616, 968)
+scale = Vector2(0.5, 0.5)
+is_left_pad = false
+
+[node name="MovingCircle" parent="." instance=ExtResource("4_wemw5")]
+position = Vector2(582, 464)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
+libraries = {
+&"": SubResource("AnimationLibrary_vifvf")
+}

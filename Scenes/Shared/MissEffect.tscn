@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf6ggwnnu8f8k"]
+
+[ext_resource type="Script" uid="uid://bg8swpa8rxueu" path="res://Scripts/miss_effect.gd" id="1_o8e2h"]
+[ext_resource type="Texture2D" uid="uid://hptus4cnhulr" path="res://Assets/X.png" id="1_pp8m3"]
+
+[node name="MissEffect" type="Node2D"]
+z_index = 2
+script = ExtResource("1_o8e2h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_pp8m3")

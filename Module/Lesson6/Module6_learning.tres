@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://cs6bt1vk3p6qk"]
+
+[ext_resource type="Resource" uid="uid://dld10lyrefkpq" path="res://Module/Lesson6/continuebar6_1.tres" id="1_0rrni"]
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_kuv8v"]
+[ext_resource type="Resource" uid="uid://dyv8121uj4eom" path="res://Module/Lesson6/continuebar6_2.tres" id="2_hf6t1"]
+[ext_resource type="Resource" uid="uid://vxenwj0wdnbs" path="res://Module/Lesson6/continuebar6_3.tres" id="3_s0e0c"]
+[ext_resource type="Resource" uid="uid://bsl84kwq7muqx" path="res://Module/Lesson6/endbar6.tres" id="4_5qxpe"]
+
+[resource]
+script = ExtResource("1_kuv8v")
+title_text = "Lesson 6"
+top_texts = Array[String](["Triplets break one beat into three equal parts.", "Here's an example"])
+bottom_texts = Array[String](["Instead of saying \"1 and\", you count:", "\"1-trip-let\"", "This gives the rhythm a smooth, bouncy feel.", "You say it like this:", "\"1-trip-let, 2-trip-let, 3-trip-let, 4-trip-let\""])
+demo_bars = Array[Resource]([ExtResource("1_0rrni"), ExtResource("2_hf6t1"), ExtResource("3_s0e0c"), ExtResource("4_5qxpe")])
+show_note_labels = false
+slide3_message = "Now Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

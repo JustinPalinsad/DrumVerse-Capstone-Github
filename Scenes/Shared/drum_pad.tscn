@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://m3vdw1jlra6r"]
+
+[ext_resource type="Texture2D" uid="uid://6owjqaogefuf" path="res://Assets/Drum.png" id="1_vruxw"]
+[ext_resource type="Script" uid="uid://hut3cbsyqnl" path="res://Scenes/Shared/drum_pad.gd" id="1_w65k6"]
+[ext_resource type="AudioStream" uid="uid://6cxxi4ru1a8f" path="res://Audio/solid-snare.wav" id="3_dmu3l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dmu3l"]
+size = Vector2(814.5, 758)
+
+[node name="DrumPad" type="Area2D"]
+script = ExtResource("1_w65k6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vruxw")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_dmu3l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(232.75, -194)
+shape = SubResource("RectangleShape2D_dmu3l")
+one_way_collision_margin = 0.0
+debug_color = Color(0.109804, 0.596078, 0.690196, 0)

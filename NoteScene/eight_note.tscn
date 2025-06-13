@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1s4ulk21f4pq"]
+
+[ext_resource type="Texture2D" uid="uid://cf08glkitvy2t" path="res://Assets/8Note.png" id="1_etqya"]
+[ext_resource type="Script" uid="uid://yb1udeidmblf" path="res://Resources/NoteCollision.gd" id="1_xh3gg"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="2_tf0f6"]
+[ext_resource type="Script" uid="uid://bprfpkpdw5rc7" path="res://Resources/Beam.gd" id="3_yh2k3"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="4_38yri"]
+[ext_resource type="Texture2D" uid="uid://dnq1wkpdqpk2c" path="res://Assets/MesCon (2).png" id="5_lfio4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_etqya"]
+radius = 23.3028
+height = 60.8159
+
+[node name="EightNote" type="Node2D"]
+script = ExtResource("1_xh3gg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("2_tf0f6")
+position = Vector2(1.7, -44)
+scale = Vector2(0.407424, 0.4)
+texture = ExtResource("1_etqya")
+
+[node name="BeamContainer" type="Node2D" parent="."]
+
+[node name="Beam1" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
+position = Vector2(-64, 0)
+script = ExtResource("3_yh2k3")
+parent_note = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam1"]
+position = Vector2(2, 4)
+rotation = -2.06875
+shape = SubResource("CapsuleShape2D_etqya")
+debug_color = Color(0, 0.6, 0.701961, 0)
+
+[node name="Label" type="Label" parent="BeamContainer/Beam1"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_38yri")
+theme_override_font_sizes/font_size = 30
+
+[node name="Beam2" type="Area2D" parent="BeamContainer" node_paths=PackedStringArray("parent_note")]
+position = Vector2(64, 0)
+script = ExtResource("3_yh2k3")
+parent_note = NodePath("../..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeamContainer/Beam2"]
+position = Vector2(2, 4)
+rotation = -2.09239
+shape = SubResource("CapsuleShape2D_etqya")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="BeamContainer/Beam2"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("4_38yri")
+theme_override_font_sizes/font_size = 30
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+position = Vector2(306, -44)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("5_lfio4")

@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=3 uid="uid://12gneqnb4n55"]
+
+[ext_resource type="Script" uid="uid://cpt0u51wbeohx" path="res://Scenes/Modes/game_scene.gd" id="1_2fmhe"]
+[ext_resource type="Texture2D" uid="uid://bdg268q4q3fkt" path="res://Assets/MesCon.png" id="2_2fmhe"]
+[ext_resource type="PackedScene" uid="uid://drqp03sxxq87f" path="res://Scenes/Shared/hit_line.tscn" id="3_ikfsv"]
+[ext_resource type="PackedScene" uid="uid://m3vdw1jlra6r" path="res://Scenes/Shared/drum_pad.tscn" id="4_5dgvu"]
+[ext_resource type="PackedScene" uid="uid://05c7pb0nfoex" path="res://Scenes/Shared/MovingCircle.tscn" id="5_uscyt"]
+[ext_resource type="PackedScene" uid="uid://bf1b1wnjbp6lo" path="res://Scenes/Shared/metronome.tscn" id="6_4xiap"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="6_rgj8m"]
+[ext_resource type="AudioStream" uid="uid://jmtb7xab8r3o" path="res://Audio/countdown.wav" id="8_7iton"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ixah"]
+radius = 18.0
+
+[sub_resource type="Animation" id="Animation_ewxye"]
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(581, 442), Vector2(1605, 442)]
+}
+
+[sub_resource type="Animation" id="Animation_jj1xe"]
+resource_name = "moving_circle"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(579, 442), Vector2(835.5, 442), Vector2(1092, 442), Vector2(1348.5, 442), Vector2(1605, 442)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsk3b"]
+_data = {
+&"RESET": SubResource("Animation_ewxye"),
+&"moving_circle": SubResource("Animation_jj1xe")
+}
+
+[node name="GameScene" type="Node2D"]
+script = ExtResource("1_2fmhe")
+metadata/_edit_vertical_guides_ = [332.0, 1611.0]
+metadata/_edit_horizontal_guides_ = [627.0, 284.0]
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_left = -85.0
+offset_top = -48.0
+offset_right = 1958.0
+offset_bottom = 1121.0
+mouse_filter = 2
+color = Color(1, 0.752941, 0.145098, 1)
+metadata/_edit_lock_ = true
+
+[node name="GuideHitLine" type="TextureRect" parent="."]
+visible = false
+offset_left = 335.0
+offset_top = 282.0
+offset_right = 1610.0
+offset_bottom = 445.0
+texture = ExtResource("2_2fmhe")
+expand_mode = 1
+
+[node name="NotesContainer" type="Node2D" parent="."]
+
+[node name="HitLine" parent="." instance=ExtResource("3_ikfsv")]
+position = Vector2(972, 366)
+scale = Vector2(0.4, 0.4)
+
+[node name="LeftPad" parent="." instance=ExtResource("4_5dgvu")]
+position = Vector2(121, 954)
+scale = Vector2(0.5, 0.5)
+
+[node name="RightPad" parent="." instance=ExtResource("4_5dgvu")]
+position = Vector2(1800, 947)
+scale = Vector2(0.5, 0.5)
+
+[node name="EffectsContainer" type="Node2D" parent="."]
+z_index = 1
+
+[node name="MovingCircle" parent="." instance=ExtResource("5_uscyt")]
+position = Vector2(581, 442)
+
+[node name="HitArea" type="Area2D" parent="MovingCircle"]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingCircle/HitArea"]
+shape = SubResource("CircleShape2D_1ixah")
+debug_color = Color(0, 0.6, 0.701961, 0)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MovingCircle"]
+libraries = {
+&"": SubResource("AnimationLibrary_lsk3b")
+}
+
+[node name="Metronome" parent="." instance=ExtResource("6_4xiap")]
+position = Vector2(1764, 136)
+scale = Vector2(0.25, 0.25)
+
+[node name="NotePatternLabel" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 510.0
+offset_top = 505.0
+offset_right = 1533.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 50
+text = "\"\""
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BPMLabel" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 1660.0
+offset_top = 241.0
+offset_right = 1868.0
+offset_bottom = 284.0
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 40
+text = "BPM:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CountdownAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_7iton")
+
+[node name="CountdownLabel" type="Label" parent="."]
+modulate = Color(0.188235, 0.0862745, 0.0509804, 1)
+offset_left = 766.0
+offset_top = 79.0
+offset_right = 1247.0
+offset_bottom = 194.0
+theme_override_fonts/font = ExtResource("6_rgj8m")
+theme_override_font_sizes/font_size = 50
+text = "\"\""
+horizontal_alignment = 1
+vertical_alignment = 1

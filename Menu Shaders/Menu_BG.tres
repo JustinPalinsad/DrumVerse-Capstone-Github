@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b0nn87h7iqj6s"]
+
+[sub_resource type="Shader" id="Shader_mct51"]
+code = "shader_type canvas_item;
+
+uniform vec4 layer_color : source_color;
+uniform vec4 sub_color : source_color;
+uniform float opacity : hint_range(0.0, 1.0) = 1.0;
+
+void fragment() {
+    vec4 src = texture(TEXTURE, UV);
+    float luminance = dot(src.rgb, vec3(0.2, 0.7, 0.07));
+    vec3 recolored = mix(sub_color.rgb, layer_color.rgb, luminance);
+    COLOR = vec4(recolored, src.a * opacity);
+}"
+
+[resource]
+shader = SubResource("Shader_mct51")
+shader_parameter/layer_color = Color(0.188235, 0.0901961, 0.0470588, 1)
+shader_parameter/sub_color = Color(1, 0.752941, 0.145098, 1)
+shader_parameter/opacity = 0.505

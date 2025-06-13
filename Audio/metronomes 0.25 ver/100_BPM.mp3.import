@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dvmve6ccphxk3"
+path="res://.godot/imported/100_BPM.mp3-9d251f6faee147b09eff311260313a0f.mp3str"
+
+[deps]
+
+source_file="res://Audio/metronomes 0.25 ver/100_BPM.mp3"
+dest_files=["res://.godot/imported/100_BPM.mp3-9d251f6faee147b09eff311260313a0f.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

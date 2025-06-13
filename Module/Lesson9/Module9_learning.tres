@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://cn7qc74guj7dm"]
+
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_dru8c"]
+[ext_resource type="Resource" uid="uid://cs1pw62kpo74n" path="res://Module/Lesson9/continuebar9_1_1.tres" id="1_fruah"]
+[ext_resource type="Resource" uid="uid://bdggt4kclwvya" path="res://Module/Lesson9/continuebar9_4.tres" id="2_fruah"]
+[ext_resource type="Resource" uid="uid://b4d6fukeebc8f" path="res://Module/Lesson9/continuebar9_3.tres" id="3_nyxej"]
+[ext_resource type="Resource" uid="uid://ctktucl3v8ftq" path="res://Module/Lesson9/endbar9.tres" id="4_yx61o"]
+
+[resource]
+script = ExtResource("1_dru8c")
+title_text = "Lesson 9"
+top_texts = Array[String](["Paradiddle", "Like this"])
+bottom_texts = Array[String](["A paradiddle mixes single and double strokes into one pattern.", "Right, Left, Right, Right – Left, Right, Left, Left", "(R-L-R-R – L-R-L-L)", "It helps your hands work together and switch smoothly between strokes."])
+demo_bars = Array[Resource]([ExtResource("1_fruah"), ExtResource("2_fruah"), ExtResource("3_nyxej"), ExtResource("4_yx61o")])
+show_note_labels = true
+slide3_message = "now Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

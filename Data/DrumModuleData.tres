@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="DrumModuleData" load_steps=2 format=3 uid="uid://2cgllkh4iglh"]
+
+[ext_resource type="Script" uid="uid://cpnvfbg8tgmgt" path="res://Resources/DrumModuleData.gd" id="2_t4p4y"]
+
+[resource]
+script = ExtResource("2_t4p4y")
+bpm = 60.0
+loop_count = -1
+notes = Array[Resource]([null, null, null])
+moving_circle_start_x = 441.0
+moving_circle_end_x = 1645.0
+moving_circle_total_duration = 4.0

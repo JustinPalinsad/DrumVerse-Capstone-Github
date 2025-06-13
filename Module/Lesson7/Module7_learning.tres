@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="LearningModuleData" load_steps=6 format=3 uid="uid://ce7j10h7gi5ya"]
+
+[ext_resource type="Script" uid="uid://djj7wpg1sjvv7" path="res://Resources/LearningModuleData.gd" id="1_0e7pt"]
+[ext_resource type="Resource" uid="uid://dmkbskrosofmt" path="res://Module/Lesson7/continuebar7_1.tres" id="1_flej2"]
+[ext_resource type="Resource" uid="uid://cs5veuaw63v7u" path="res://Module/Lesson7/continuebar7_2.tres" id="2_yfi8k"]
+[ext_resource type="Resource" uid="uid://d2gphg8t0fope" path="res://Module/Lesson7/continuebar7_3.tres" id="3_twcmy"]
+[ext_resource type="Resource" uid="uid://vpycm064cvlu" path="res://Module/Lesson7/endbar7.tres" id="4_jdacg"]
+
+[resource]
+script = ExtResource("1_0e7pt")
+title_text = "Lesson 7"
+top_texts = Array[String](["Single Stroke", "like this"])
+bottom_texts = Array[String](["Let’s start playing real drum patterns!", "A single stroke means tapping one hand, then the other.", "\"Right, Left, Right, Left…\"", "It’s simple, and great for building control."])
+demo_bars = Array[Resource]([ExtResource("1_flej2"), ExtResource("2_yfi8k"), ExtResource("3_twcmy"), ExtResource("4_jdacg")])
+show_note_labels = true
+slide3_message = "now Try Practice Mode first before proceeding to Challenge Mode."
+metadata/_custom_type_script = "uid://djj7wpg1sjvv7"

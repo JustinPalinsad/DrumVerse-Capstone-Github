@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="HitlineData" load_steps=13 format=3 uid="uid://bm2vpvu67146q"]
+
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_fii6n"]
+[ext_resource type="PackedScene" uid="uid://dxnv16vh1qgin" path="res://NoteScene/quarter_note_1.tscn" id="2_10t5f"]
+[ext_resource type="PackedScene" uid="uid://biq2jy3uh3cxn" path="res://NoteScene/quarter_note.tscn" id="3_4s3nq"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="4_oi56y"]
+
+[sub_resource type="Resource" id="Resource_udcg2"]
+script = ExtResource("1_fii6n")
+required_pad = "left"
+x_position = 588.0
+note_scene = ExtResource("2_10t5f")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_nxb1c"]
+script = ExtResource("1_fii6n")
+required_pad = "right"
+x_position = 608.0
+note_scene = ExtResource("3_4s3nq")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_ww806"]
+script = ExtResource("1_fii6n")
+required_pad = "right"
+x_position = 844.0
+note_scene = ExtResource("2_10t5f")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_sr5oa"]
+script = ExtResource("1_fii6n")
+required_pad = "left"
+x_position = 864.0
+note_scene = ExtResource("3_4s3nq")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_ige0u"]
+script = ExtResource("1_fii6n")
+required_pad = "left"
+x_position = 1099.0
+note_scene = ExtResource("2_10t5f")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_6jcsy"]
+script = ExtResource("1_fii6n")
+required_pad = "right"
+x_position = 1119.0
+note_scene = ExtResource("3_4s3nq")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_x6362"]
+script = ExtResource("1_fii6n")
+required_pad = "right"
+x_position = 1356.0
+note_scene = ExtResource("2_10t5f")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[sub_resource type="Resource" id="Resource_4uh8r"]
+script = ExtResource("1_fii6n")
+required_pad = "left"
+x_position = 1376.0
+note_scene = ExtResource("3_4s3nq")
+metadata/_custom_type_script = "uid://bht5hmy7x4rx7"
+
+[resource]
+script = ExtResource("4_oi56y")
+notes = Array[ExtResource("1_fii6n")]([SubResource("Resource_udcg2"), SubResource("Resource_nxb1c"), SubResource("Resource_ww806"), SubResource("Resource_sr5oa"), SubResource("Resource_ige0u"), SubResource("Resource_6jcsy"), SubResource("Resource_x6362"), SubResource("Resource_4uh8r")])
+metadata/_custom_type_script = "uid://dg6qemsyefrt5"

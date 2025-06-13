@@ -1,0 +1,476 @@
+[gd_scene load_steps=32 format=3 uid="uid://cuip7782hhwtg"]
+
+[ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
+[ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
+[ext_resource type="Texture2D" uid="uid://ce5cmnitbtulq" path="res://Menu Assets/black square.png" id="3_8ebx2"]
+[ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="4_lneat"]
+[ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="7_28w0c"]
+[ext_resource type="Texture2D" uid="uid://dnnduu5dasdkg" path="res://Assets/Z/NoteW.png" id="8_8ebx2"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="8_88up4"]
+[ext_resource type="Texture2D" uid="uid://gwd1ka5agd8q" path="res://Assets/Z/Note4.png" id="8_rpu63"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="9_nkn24"]
+[ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="9_puqb1"]
+[ext_resource type="Texture2D" uid="uid://pspv0wlgysn5" path="res://Assets/16Note.png" id="10_rpu63"]
+[ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="11_pm2xg"]
+[ext_resource type="Texture2D" uid="uid://c5v3i83vwtkt7" path="res://Assets/HNote.png" id="11_qw04s"]
+[ext_resource type="Texture2D" uid="uid://w0l6bwaxpaxq" path="res://Assets/Triplets.png" id="11_tu1r8"]
+[ext_resource type="Texture2D" uid="uid://4vgsdvadyr57" path="res://Menu Assets/Play.png" id="12_bulmj"]
+[ext_resource type="Texture2D" uid="uid://rwgkhha6dj4u" path="res://Menu Assets/cards v2/Lesson_Cards_004.png" id="13_47u5r"]
+[ext_resource type="Texture2D" uid="uid://ko1t7e5uckcc" path="res://Assets/Z/Note8.png" id="15_47u5r"]
+[ext_resource type="Texture2D" uid="uid://b6m05r7vtdh2j" path="res://Menu Assets/cards v2/Lesson_Cards_005.png" id="15_yfa7k"]
+[ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="17_5bfpi"]
+[ext_resource type="Texture2D" uid="uid://1wb7qyfvrcsw" path="res://Menu Assets/cards v2/Lesson_Cards_006.png" id="17_vhmeq"]
+[ext_resource type="Texture2D" uid="uid://d1tpmykefv61n" path="res://Menu Assets/cards v2/Lesson_Cards_007.png" id="19_ntfsj"]
+[ext_resource type="Texture2D" uid="uid://bew2bm8ubto0n" path="res://Menu Assets/cards v2/Lesson_Cards_008.png" id="20_e3w4p"]
+[ext_resource type="Texture2D" uid="uid://58mqs21vlnlr" path="res://Menu Assets/cards v2/Lesson_Cards_009.png" id="21_q7vma"]
+[ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="22_h82b0"]
+[ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="23_28w0c"]
+[ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="24_puqb1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lneat"]
+
+[sub_resource type="Resource" id="Resource_ytwp1"]
+script = ExtResource("9_nkn24")
+friction = 4.0
+minimum_velocity = 0.4
+rebound_strength = 7.0
+
+[sub_resource type="Resource" id="Resource_3fvkg"]
+script = ExtResource("9_nkn24")
+friction = 4.0
+minimum_velocity = 0.4
+rebound_strength = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lneat"]
+size = Vector2(54.5747, 45.9718)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bulmj"]
+size = Vector2(13.9374, 130.355)
+
+[node name="sample_selection" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kdmyb")
+
+[node name="bg" type="TextureRect" parent="."]
+material = ExtResource("4_lneat")
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -14.0
+offset_right = 197.0
+offset_bottom = 186.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(9.64421, 5.54425)
+texture = ExtResource("3_8ebx2")
+
+[node name="MenuBg" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.258824)
+material = ExtResource("2_bulmj")
+layout_mode = 0
+offset_left = -56.0
+offset_top = -22.0
+offset_right = 2504.0
+offset_bottom = 1418.0
+scale = Vector2(0.871489, 0.871417)
+texture = SubResource("CompressedTexture2D_lneat")
+
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 1844.0
+offset_bottom = 1178.0
+scale = Vector2(0.916, 0.916)
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+script = ExtResource("8_88up4")
+wheel_scroll_damper = SubResource("Resource_ytwp1")
+dragging_scroll_damper = SubResource("Resource_3fvkg")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SmoothScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 125
+alignment = 1
+
+[node name="MarginTop" type="MarginContainer" parent="SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 175
+
+[node name="Lesson1" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("7_28w0c")
+
+[node name="whole note" type="Sprite2D" parent="SmoothScrollContainer/VBoxContainer/Lesson1"]
+material = ExtResource("4_lneat")
+position = Vector2(926.856, 425.983)
+scale = Vector2(2.14564, 1.78043)
+texture = ExtResource("8_8ebx2")
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson1"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson1Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson1/Lesson1Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson2" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("9_puqb1")
+
+[node name="whole note" type="Sprite2D" parent="SmoothScrollContainer/VBoxContainer/Lesson2"]
+material = ExtResource("4_lneat")
+position = Vector2(943.232, 473.576)
+scale = Vector2(0.730436, 0.606109)
+texture = ExtResource("11_qw04s")
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson2"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson2Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson2/Lesson2Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson3" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("11_pm2xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="SmoothScrollContainer/VBoxContainer/Lesson3"]
+material = ExtResource("4_lneat")
+position = Vector2(959.607, 461.127)
+scale = Vector2(1.18948, 1.18948)
+texture = ExtResource("8_rpu63")
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson3"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson3Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson3/Lesson3Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson4" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("13_47u5r")
+
+[node name="whole note" type="Sprite2D" parent="SmoothScrollContainer/VBoxContainer/Lesson4"]
+material = ExtResource("4_lneat")
+position = Vector2(874.454, 484.703)
+scale = Vector2(1.101, 0.913598)
+texture = ExtResource("15_47u5r")
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson4"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson4Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson4/Lesson4Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson5" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("15_yfa7k")
+
+[node name="whole note" type="Sprite2D" parent="SmoothScrollContainer/VBoxContainer/Lesson5"]
+material = ExtResource("4_lneat")
+position = Vector2(874.454, 495.179)
+scale = Vector2(0.428407, 0.428407)
+texture = ExtResource("10_rpu63")
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson5"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson5Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson5/Lesson5Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson6" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("17_vhmeq")
+
+[node name="whole note" type="Sprite2D" parent="SmoothScrollContainer/VBoxContainer/Lesson6"]
+material = ExtResource("4_lneat")
+position = Vector2(896.288, 477.271)
+scale = Vector2(0.31154, 0.31154)
+texture = ExtResource("11_tu1r8")
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson6"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson6Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson6/Lesson6Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson7" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("19_ntfsj")
+
+[node name="Label2" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson7"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 651.747
+offset_top = 386.218
+offset_right = 1253.75
+offset_bottom = 653.218
+scale = Vector2(0.75257, 0.764354)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Single 
+Stroke"
+horizontal_alignment = 1
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson7"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson7Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson7/Lesson7Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson8" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("20_e3w4p")
+
+[node name="Label2" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson8"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 548.035
+offset_top = 360.668
+offset_right = 1284.03
+offset_bottom = 762.668
+scale = Vector2(0.894287, 0.894287)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Double 
+Stroke
+"
+horizontal_alignment = 1
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson8"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson8Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson8/Lesson8Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson9" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("21_q7vma")
+
+[node name="Label2" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson9"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 649.563
+offset_top = 474.856
+offset_right = 1149.56
+offset_bottom = 606.856
+scale = Vector2(0.723228, 0.723228)
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Paradiddle"
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson9"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson9Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson9/Lesson9Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson10" type="TextureButton" parent="SmoothScrollContainer/VBoxContainer"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+mouse_filter = 1
+texture_normal = ExtResource("22_h82b0")
+
+[node name="Label2" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson10"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 782.751
+offset_top = 451.489
+offset_right = 1194.75
+offset_bottom = 583.489
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Flam"
+
+[node name="Grade Text" type="Label" parent="SmoothScrollContainer/VBoxContainer/Lesson10"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson10Area" type="Area2D" parent="SmoothScrollContainer/VBoxContainer/Lesson10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmoothScrollContainer/VBoxContainer/Lesson10/Lesson10Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="MarginBottom" type="MarginContainer" parent="SmoothScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 125
+
+[node name="SelectionTitle" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 529.0
+offset_right = 1391.0
+offset_bottom = 192.0
+grow_horizontal = 2
+
+[node name="TextureRect" type="TextureRect" parent="SelectionTitle"]
+material = ExtResource("4_lneat")
+layout_mode = 2
+texture = ExtResource("23_28w0c")
+
+[node name="Back" type="TouchScreenButton" parent="."]
+material = ExtResource("4_lneat")
+position = Vector2(133, 45)
+scale = Vector2(0.554455, 0.554455)
+texture_normal = ExtResource("24_puqb1")
+
+[node name="ClickSoundPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_5bfpi")
+
+[node name="Play" type="TouchScreenButton" parent="."]
+material = ExtResource("4_lneat")
+position = Vector2(146, 318)
+scale = Vector2(0.916, 0.916)
+texture_normal = ExtResource("12_bulmj")
+
+[node name="PlayArea" type="Area2D" parent="Play"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Play/PlayArea"]
+position = Vector2(1199.48, 295.852)
+scale = Vector2(85.8047, 0.904198)
+shape = SubResource("RectangleShape2D_bulmj")
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="area_entered" from="Play/PlayArea" to="." method="_on_play_area_area_entered"]
+[connection signal="area_exited" from="Play/PlayArea" to="." method="_on_play_area_area_exited"]

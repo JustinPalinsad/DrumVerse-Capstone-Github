@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c34jfydirmkoc"]
+
+[ext_resource type="Shader" uid="uid://bsykgjphvmjhg" path="res://shader/NoteShader.gdshader" id="1_qvysv"]
+
+[resource]
+shader = ExtResource("1_qvysv")
+shader_parameter/time = 0.0

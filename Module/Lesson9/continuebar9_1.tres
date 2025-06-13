@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="HitlineData" load_steps=3 format=3 uid="uid://cxndsqbysjfjp"]
+
+[ext_resource type="Script" uid="uid://bht5hmy7x4rx7" path="res://Resources/DrumNote.gd" id="1_vwxg8"]
+[ext_resource type="Script" uid="uid://dg6qemsyefrt5" path="res://Resources/HitlineData.gd" id="2_7vv65"]
+
+[resource]
+script = ExtResource("2_7vv65")
+notes = Array[ExtResource("1_vwxg8")]([])
+metadata/_custom_type_script = "uid://dg6qemsyefrt5"

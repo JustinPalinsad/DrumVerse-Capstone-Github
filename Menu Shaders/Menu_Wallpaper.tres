@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dvo6hdn8ecyi2"]
+
+[ext_resource type="Shader" uid="uid://cp3srl0en4nsa" path="res://Sample/sample_scene.gdshader" id="1_hd8gx"]
+
+[resource]
+shader = ExtResource("1_hd8gx")
+shader_parameter/layer_color = Color(0.188235, 0.0901961, 0.0470588, 1)
+shader_parameter/sub_color = Color(1, 0.752941, 0.145098, 1)
+shader_parameter/opacity = 1.0
