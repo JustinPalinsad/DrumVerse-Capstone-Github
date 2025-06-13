@@ -41,6 +41,10 @@ folder_colors={
 "res://shader/": "pink"
 }
 
+[gui]
+
+common/snap_controls_to_pixels=false
+
 [input]
 
 hit={
