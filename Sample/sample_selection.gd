@@ -1,16 +1,17 @@
+@tool	
 extends Control
 
 #use the texture buttons Mark inside the vboxcontainer
-@onready var module1_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson1
-@onready var module2_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson2
-@onready var module3_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson3
-@onready var module4_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson4
-@onready var module5_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson5
-@onready var module6_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson6
-@onready var module7_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson7
-@onready var module8_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson8
-@onready var module9_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson9
-@onready var module10_button: TextureButton = $SmoothScrollContainer/VBoxContainer/Lesson10
+@onready var module1_button: TextureButton = $CarouselContainer/Control/Lesson1#$SmoothScrollContainer/VBoxContainer/Lesson1
+@onready var module2_button: TextureButton = $CarouselContainer/Control/Lesson2#$SmoothScrollContainer/VBoxContainer/Lesson2
+@onready var module3_button: TextureButton = $CarouselContainer/Control/Lesson3#$SmoothScrollContainer/VBoxContainer/Lesson3
+@onready var module4_button: TextureButton = $CarouselContainer/Control/Lesson4#$SmoothScrollContainer/VBoxContainer/Lesson4
+@onready var module5_button: TextureButton = $CarouselContainer/Control/Lesson5#$SmoothScrollContainer/VBoxContainer/Lesson5
+@onready var module6_button: TextureButton = $CarouselContainer/Control/Lesson6 #$SmoothScrollContainer/VBoxContainer/Lesson6
+@onready var module7_button: TextureButton = $CarouselContainer/Control/Lesson7#$SmoothScrollContainer/VBoxContainer/Lesson7
+@onready var module8_button: TextureButton = $CarouselContainer/Control/Lesson8#$SmoothScrollContainer/VBoxContainer/Lesson8
+@onready var module9_button: TextureButton = $CarouselContainer/Control/Lesson9#$SmoothScrollContainer/VBoxContainer/Lesson9
+@onready var module10_button: TextureButton = $CarouselContainer/Control/Lesson10#$SmoothScrollContainer/VBoxContainer/Lesson10
 
 var module_callbacks = {
 	1: _on_module1_button_pressed,

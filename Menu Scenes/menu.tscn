@@ -1,7 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://8rtd7mjr7jah"]
+[gd_scene load_steps=15 format=3 uid="uid://c31k7cytydksi"]
 
 [ext_resource type="Script" uid="uid://bft0q8u7g8pjw" path="res://Menu Scenes/menu.gd" id="1_dongr"]
-[ext_resource type="PackedScene" uid="uid://dnfm7cdjuhfsq" path="res://Menu Scenes/carousel_container.tscn" id="1_en0le"]
+[ext_resource type="PackedScene" uid="uid://c0b6gwnfnib1g" path="res://Menu Scenes/carousel_container.tscn" id="1_en0le"]
 [ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="2_wguuc"]
 [ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="3_mooym"]
 [ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="4_xfgc3"]
@@ -30,18 +30,18 @@ position_offset_node = NodePath("Control")
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
-offset_top = 96.4991
+offset_top = 96.5003
 offset_right = 40.0
-offset_bottom = 136.499
+offset_bottom = 136.5
 
 [node name="TextureButton2" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 0.999999)
+modulate = Color(1, 1, 1, 1)
 z_index = 1
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(1, 1)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("2_wguuc")
 
@@ -54,7 +54,7 @@ offset_top = 581.425
 offset_right = 538.0
 offset_bottom = 1225.43
 scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(538, 322)
+pivot_offset = Vector2(538, 322.003)
 texture_normal = ExtResource("3_mooym")
 
 [node name="TextureButton4" type="TextureButton" parent="CarouselContainer/Control"]
@@ -62,9 +62,9 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -1162
 layout_mode = 0
 offset_left = -538.0
-offset_top = 1162.85
+offset_top = 1162.86
 offset_right = 538.0
-offset_bottom = 1806.85
+offset_bottom = 1806.86
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("4_xfgc3")
@@ -76,7 +76,7 @@ layout_mode = 0
 offset_left = -538.0
 offset_top = 1744.28
 offset_right = 538.0
-offset_bottom = 2388.27
+offset_bottom = 2388.28
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("5_op4s7")
@@ -86,9 +86,9 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -2325
 layout_mode = 0
 offset_left = -538.0
-offset_top = 2325.7
+offset_top = 2325.71
 offset_right = 538.0
-offset_bottom = 2969.7
+offset_bottom = 2969.71
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("6_exk7r")
@@ -110,9 +110,9 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -3488
 layout_mode = 0
 offset_left = -538.0
-offset_top = 3488.55
+offset_top = 3488.56
 offset_right = 538.0
-offset_bottom = 4132.55
+offset_bottom = 4132.56
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("8_wacr1")
@@ -134,9 +134,9 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -4088
 layout_mode = 0
 offset_left = -538.0
-offset_top = 4651.4
+offset_top = 4651.41
 offset_right = 538.0
-offset_bottom = 5295.4
+offset_bottom = 5295.41
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("10_ugxmy")
