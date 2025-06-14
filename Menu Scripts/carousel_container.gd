@@ -11,7 +11,7 @@ extends Node2D
 @export_range(0.01, 0.99, 0.01) var scale_min: float = 0.1
 
 @export var smoothing_speed: float = 6.5
-@export var follow_button_focus: bool = false
+@export var follow_button_focus: bool = true
 @export var position_offset_node: Control
 
 var dragging := false
@@ -39,9 +39,8 @@ func _ready():
 				child.connect("pressed", Callable(self, "_on_button_pressed").bind(child))
 
 func _on_button_pressed(button: Control):
-	# Change selection immediately on click
+	# 🔄 Update selection regardless of whether it's already selected
 	selected_index = button.get_index()
-	# Queue print AFTER this button is highlighted
 	queued_print_index = button.get_index()
 
 func _input(event):
@@ -53,7 +52,6 @@ func _input(event):
 				last_mouse_pos = event.position
 				velocity = 0.0
 
-				# Remove focus to allow swipe
 				if position_offset_node:
 					for child in position_offset_node.get_children():
 						if child.has_focus():
@@ -81,16 +79,20 @@ func _process(delta: float) -> void:
 		i.position = Vector2(-i.size.x / 2.0, y)
 		y += i.size.y + spacing
 
-		if follow_button_focus and i.has_focus():
-			selected_index = i.get_index()
+	# ✅ Follow focused button (keyboard/tab)
+	if follow_button_focus:
+		for i in position_offset_node.get_children():
+			if i.has_focus():
+				selected_index = i.get_index()
+				break
 
-	# Smooth scroll to selected
+	# 📍 Smooth scroll to selected
 	if !dragging:
 		var target_item = position_offset_node.get_child(selected_index)
 		var target_y = -(target_item.position.y + target_item.size.y / 2.0 - get_viewport_rect().size.y / 2.0)
 		position_offset_node.position.y = lerp(position_offset_node.position.y, target_y, smoothing_speed * delta)
 
-	# Snap to nearest on release
+	# 🔄 Snap to closest after swipe
 	if released:
 		released = false
 		var center_y = get_viewport_rect().size.y / 2.0
@@ -107,25 +109,23 @@ func _process(delta: float) -> void:
 
 		selected_index = closest_index
 
-	# ✨ Live visual feedback while swiping
+	# 🧠 Live scaling, opacity, and interactivity control
 	var center_y := get_viewport_rect().size.y / 2.0
 	for i in position_offset_node.get_children():
 		var item_center_y = position_offset_node.position.y + i.position.y + i.size.y / 2.0
 		var pixel_dist = abs(center_y - item_center_y)
 
-		# Normalize pixel distance to 0..1 range
 		var normalized = clamp(pixel_dist / (get_viewport_rect().size.y / 2.0), 0.0, 1.0)
 
-		# Apply scaling and opacity
-		var scale_val = clamp(1.0 - scale_strength * normalized, scale_min, 1.0)
-		i.scale = Vector2.ONE * scale_val
+		i.scale = Vector2.ONE * clamp(1.0 - scale_strength * normalized, scale_min, 1.0)
+		i.modulate.a = clamp(1.0 - opacity_strength * normalized, 0.0, 1.0)
 
-		var opacity_val = clamp(1.0 - opacity_strength * normalized, 0.0, 1.0)
-		i.modulate.a = opacity_val
-
-		i.z_index = 1 if i.get_index() == selected_index else -pixel_dist
-
-	# ✅ Print when the queued item is centered
-	if queued_print_index == selected_index:
-		print("Selected item index + 1: ", selected_index + 1)
-		queued_print_index = -1
+		# 🎯 Centered child is interactable; others are ignored
+		if i.get_index() == selected_index:
+			i.z_index = 1
+			i.mouse_filter = Control.MOUSE_FILTER_STOP
+			i.focus_mode = Control.FOCUS_ALL
+		else:
+			i.z_index = -abs(i.get_index() - selected_index)
+			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			i.focus_mode = Control.FOCUS_NONE
