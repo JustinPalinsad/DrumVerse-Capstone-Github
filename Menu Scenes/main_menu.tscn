@@ -292,5 +292,18 @@ stream = ExtResource("13_cv22u")
 [node name="BackSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_i72bd")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 386.0
+offset_right = 567.0
+offset_bottom = 672.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 151
+text = "peanits
+"
+
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
