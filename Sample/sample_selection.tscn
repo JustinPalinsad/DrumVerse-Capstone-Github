@@ -455,6 +455,7 @@ spacing = -62.0
 wraparound_enabled = true
 opacity_strength = 0.4
 scale_min = 0.86
+follow_button_focus = true
 position_offset_node = NodePath("Control")
 
 [node name="SelectionTitle" type="VBoxContainer" parent="CarouselContainer"]
@@ -481,14 +482,12 @@ offset_bottom = 136.5
 mouse_filter = 1
 
 [node name="Lesson1" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("4_lneat")
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(1, 1)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_28w0c")
 

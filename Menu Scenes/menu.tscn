@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dw0ilibfnm20v"]
+[gd_scene load_steps=15 format=3 uid="uid://cxqnmnve6ow5p"]
 
 [ext_resource type="Script" path="res://Menu Scenes/menu.gd" id="1_dongr"]
 [ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="1_en0le"]
@@ -24,7 +24,7 @@ spacing = -62.575
 wraparound_enabled = true
 opacity_strength = 0.49
 scale_min = 0.01
-follow_button_focus = null
+follow_button_focus = true
 position_offset_node = NodePath("Control")
 
 [node name="Control" type="Control" parent="CarouselContainer"]
@@ -35,13 +35,11 @@ offset_right = 40.0
 offset_bottom = 136.5
 
 [node name="TextureButton2" type="TextureButton" parent="CarouselContainer/Control"]
-modulate = Color(1, 1, 1, 1)
 z_index = 1
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
-scale = Vector2(1, 1)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("2_wguuc")
 
