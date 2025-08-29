@@ -247,3 +247,11 @@ func _on_play_pressed() -> void:
 		module_callbacks[GameState.lessons].call()
 	else:
 		print("No centered module for lesson: ", GameState.lessons)
+
+
+func _on_up_pressed() -> void:
+	$CarouselContainer._up()
+
+
+func _on_down_pressed() -> void:
+	$CarouselContainer._down()

@@ -13,6 +13,8 @@ extends Node2D
 @export var smoothing_speed: float = 6.5
 @export var follow_button_focus: bool = true
 @export var position_offset_node: Control
+@export var up_button: Button # New export for your up button
+@export var down_button: Button # New export for your down button
 
 var dragging := false
 var last_mouse_pos := Vector2.ZERO
@@ -37,11 +39,19 @@ func _ready():
 		for child in position_offset_node.get_children():
 			if child.has_signal("pressed") and not child.is_connected("pressed", Callable(self, "_on_button_pressed")):
 				child.connect("pressed", Callable(self, "_on_button_pressed").bind(child))
+	
+	# Connect the up and down buttons to their functions
+	if up_button:
+		up_button.connect("pressed", Callable(self, "_up"))
+	if down_button:
+		down_button.connect("pressed", Callable(self, "_down"))
 
 func _on_button_pressed(button: Control):
-	# 🔄 Update selection regardless of whether it's already selected
-	selected_index = button.get_index()
-	queued_print_index = button.get_index()
+	# Only execute the action if the button pressed is the highlighted one
+	if button.get_index() == selected_index:
+		# 🔄 Update selection if the correct button is pressed
+		selected_index = button.get_index()
+		queued_print_index = button.get_index()
 
 func _input(event):
 	if event is InputEventMouseButton:
@@ -129,3 +139,12 @@ func _process(delta: float) -> void:
 			i.z_index = -abs(i.get_index() - selected_index)
 			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
 			i.focus_mode = Control.FOCUS_NONE
+			
+func _up():
+	selected_index -= 1
+	if selected_index < 0:
+		selected_index += 1
+func _down():
+	selected_index += 1
+	if selected_index > position_offset_node.get_child_count()-1:
+		selected_index -= 1
