@@ -11,6 +11,7 @@ var animation_direction := 1  # 1 for forward, -1 for backward
 
 func _ready():
 	# Play the animation, then pause it at 0.0 to prevent auto-loop
+	
 	anim_player.play("menu_animation")	
 	anim_player.seek(0.3, true)
 	anim_player.pause()

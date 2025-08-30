@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cy6rnul4iyn7q"]
+[gd_scene load_steps=20 format=3 uid="uid://cy6rnul4iyn7q"]
 
 [ext_resource type="Texture2D" uid="uid://nnhg3tq3cg1g" path="res://Menu Assets/Notes.png" id="1_akhtc"]
 [ext_resource type="Script" uid="uid://bvukgvf67mb2h" path="res://Menu Scripts/main_menu.gd" id="1_l382o"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://battv6y8amyfm" path="res://Assets/vecteezy_geometric-design-element_21048718.png" id="12_l382o"]
 [ext_resource type="AudioStream" uid="uid://co282gm4j7ur8" path="res://Audio/opening_sound.wav" id="13_cv22u"]
 [ext_resource type="AudioStream" uid="uid://dk57nyfbj42mm" path="res://Audio/select_sound.wav" id="14_i72bd"]
+[ext_resource type="PackedScene" uid="uid://c3y8lswnxm60c" path="res://Scenes/metronomev2.tscn" id="16_rswhg"]
 
 [sub_resource type="Animation" id="Animation_afnto"]
 length = 0.001
@@ -291,6 +292,12 @@ stream = ExtResource("13_cv22u")
 
 [node name="BackSoundPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_i72bd")
+
+[node name="MetronomeV2" parent="." instance=ExtResource("16_rswhg")]
+position = Vector2(1781, 160)
+scale = Vector2(0.106531, 0.106531)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MetronomeV2"]
 
 [connection signal="pressed" from="SelectButton" to="." method="_on_select_button_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

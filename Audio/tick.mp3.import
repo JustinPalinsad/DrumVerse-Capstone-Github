@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/tick.mp3-d1c7f93963ae4d43ceadfabfab21359d.mp3
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.04
+bpm=0.0
 beat_count=0
 bar_beats=4
