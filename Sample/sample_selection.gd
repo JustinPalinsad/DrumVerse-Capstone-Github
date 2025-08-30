@@ -252,12 +252,6 @@ func _on_play_pressed() -> void:
 func _on_up_pressed() -> void:
 	$CarouselContainer._up()
 
+
 func _on_down_pressed() -> void:
 	$CarouselContainer._down()
-
-
-func _on_advanced_button_pressed() -> void:
-	$ClickSoundPlayer.play()
-	await get_tree().create_timer(0.2).timeout
-	get_tree().change_scene_to_file("res://Menu Scenes/advanced_lesson_screen.tscn")
-	
