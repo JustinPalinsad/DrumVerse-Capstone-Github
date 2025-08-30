@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=16 format=3 uid="uid://cxqnmnve6ow5p"]
 
 [ext_resource type="Script" path="res://Menu Scenes/menu.gd" id="1_dongr"]
@@ -7,11 +8,16 @@
 [ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="3_mooym"]
 [ext_resource type="Material" uid="uid://dykh6lk1hfo2u" path="res://Menu Shaders/Asset_Color.tres" id="3_op4s7"]
 =======
+=======
+>>>>>>> Stashed changes
 [gd_scene load_steps=14 format=3 uid="uid://cxqnmnve6ow5p"]
 
 [ext_resource type="PackedScene" uid="uid://bnoifeq3a218w" path="res://Menu Scenes/carousel_container.tscn" id="1_en0le"]
 [ext_resource type="Texture2D" uid="uid://cnjvlvavntlhk" path="res://Menu Assets/cards v2/Lesson_Cards_001.png" id="2_wguuc"]
 [ext_resource type="Texture2D" uid="uid://bm06vk3mfnn88" path="res://Menu Assets/cards v2/Lesson_Cards_002.png" id="3_mooym"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://biicubh00vdyt" path="res://Menu Assets/cards v2/Lesson_Cards_003.png" id="4_xfgc3"]
 [ext_resource type="Texture2D" uid="uid://rwgkhha6dj4u" path="res://Menu Assets/cards v2/Lesson_Cards_004.png" id="5_op4s7"]
@@ -26,6 +32,7 @@
 
 [node name="Menu" type="Node2D"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 script = ExtResource("1_dongr")
 
 [node name="CarouselContainer" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("1_en0le")]
@@ -35,6 +42,8 @@ wraparound_enabled = true
 opacity_strength = 0.49
 scale_min = 0.01
 =======
+=======
+>>>>>>> Stashed changes
 
 [node name="CarouselContainer" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("1_en0le")]
 position = Vector2(1136, 596)
@@ -44,12 +53,16 @@ wraparound_height = 51.41
 opacity_strength = 0.0
 scale_min = 0.46
 follow_button_focus = false
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 position_offset_node = NodePath("Control")
 
 [node name="Control" type="Control" parent="CarouselContainer"]
 layout_mode = 3
 anchors_preset = 0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 offset_top = 96.5002
 offset_right = 40.0
@@ -60,19 +73,27 @@ modulate = Color(1, 1, 1, 1)
 z_index = 1
 material = ExtResource("3_op4s7")
 =======
+=======
+>>>>>>> Stashed changes
 offset_top = -322.002
 offset_right = 40.0
 offset_bottom = -282.002
 
 [node name="TextureButton2" type="TextureButton" parent="CarouselContainer/Control"]
 z_index = 1
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 layout_mode = 0
 offset_left = -538.0
 offset_right = 538.0
 offset_bottom = 644.0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 scale = Vector2(1, 1)
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 pivot_offset = Vector2(538, 322)
@@ -80,9 +101,13 @@ texture_normal = ExtResource("2_wguuc")
 
 [node name="TextureButton3" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 modulate = Color(1, 1, 1, 0.51)
 z_index = -1
 material = ExtResource("3_op4s7")
+=======
+z_index = -1
+>>>>>>> Stashed changes
 =======
 z_index = -1
 >>>>>>> Stashed changes
@@ -94,6 +119,7 @@ offset_bottom = 1225.43
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322.003)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 focus_mode = 0
 mouse_filter = 2
 texture_normal = ExtResource("3_mooym")
@@ -103,10 +129,15 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -2
 material = ExtResource("3_op4s7")
 =======
+=======
+>>>>>>> Stashed changes
 texture_normal = ExtResource("3_mooym")
 
 [node name="TextureButton4" type="TextureButton" parent="CarouselContainer/Control"]
 z_index = -2
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 layout_mode = 0
 offset_left = -538.0
@@ -114,6 +145,7 @@ offset_top = 1162.86
 offset_right = 538.0
 offset_bottom = 1806.86
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
@@ -125,12 +157,17 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -3
 material = ExtResource("3_op4s7")
 =======
+=======
+>>>>>>> Stashed changes
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("4_xfgc3")
 
 [node name="TextureButton5" type="TextureButton" parent="CarouselContainer/Control"]
 z_index = -3
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 layout_mode = 0
 offset_left = -538.0
@@ -138,6 +175,7 @@ offset_top = 1744.28
 offset_right = 538.0
 offset_bottom = 2388.28
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
@@ -149,12 +187,17 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -4
 material = ExtResource("3_op4s7")
 =======
+=======
+>>>>>>> Stashed changes
 scale = Vector2(0.46, 0.46)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("5_op4s7")
 
 [node name="TextureButton6" type="TextureButton" parent="CarouselContainer/Control"]
 z_index = -4
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 layout_mode = 0
 offset_left = -538.0
@@ -162,6 +205,7 @@ offset_top = 2325.71
 offset_right = 538.0
 offset_bottom = 2969.71
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
 focus_mode = 0
@@ -173,18 +217,24 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -5
 material = ExtResource("3_op4s7")
 =======
+=======
+>>>>>>> Stashed changes
 scale = Vector2(0.46, 0.46)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("6_exk7r")
 
 [node name="TextureButton7" type="TextureButton" parent="CarouselContainer/Control"]
 z_index = -5
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 layout_mode = 0
 offset_left = -538.0
 offset_top = 2907.13
 offset_right = 538.0
 offset_bottom = 3551.13
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 scale = Vector2(0.75, 0.75)
 pivot_offset = Vector2(538, 322)
@@ -197,17 +247,23 @@ modulate = Color(1, 1, 1, 0.51)
 z_index = -6
 material = ExtResource("3_op4s7")
 =======
+=======
+>>>>>>> Stashed changes
 scale = Vector2(0.46, 0.46)
 pivot_offset = Vector2(538, 322)
 texture_normal = ExtResource("7_6iowy")
 
 [node name="TextureButton8" type="TextureButton" parent="CarouselContainer/Control"]
 z_index = -6
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 layout_mode = 0
 offset_left = -538.0
 offset_top = 3488.56
 offset_right = 538.0
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 offset_bottom = 4132.56
 scale = Vector2(0.75, 0.75)
@@ -263,6 +319,8 @@ texture_normal = ExtResource("11_n2mnj")
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
 =======
+=======
+>>>>>>> Stashed changes
 offset_bottom = 4132.55
 scale = Vector2(0.46, 0.46)
 pivot_offset = Vector2(538, 322)
@@ -303,12 +361,19 @@ texture_normal = ExtResource("11_n2mnj")
 
 [node name="LeftButton" type="TouchScreenButton" parent="."]
 visible = false
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 position = Vector2(365, 862)
 texture_normal = ExtResource("6_lppip")
 
 [node name="RightButton" type="TouchScreenButton" parent="."]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+visible = false
+>>>>>>> Stashed changes
 =======
 visible = false
 >>>>>>> Stashed changes
