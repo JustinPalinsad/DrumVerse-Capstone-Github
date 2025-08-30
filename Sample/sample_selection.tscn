@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://cuip7782hhwtg"]
+[gd_scene load_steps=34 format=3 uid="uid://cuip7782hhwtg"]
 
 [ext_resource type="Script" uid="uid://dhvwoex6t5enj" path="res://Sample/sample_selection.gd" id="1_kdmyb"]
 [ext_resource type="Material" uid="uid://b0nn87h7iqj6s" path="res://Menu Shaders/Menu_BG.tres" id="2_bulmj"]
@@ -26,7 +26,8 @@
 [ext_resource type="Texture2D" uid="uid://dumsyhs000cbh" path="res://Menu Assets/cards v2/Lesson_Cards_010.png" id="22_h82b0"]
 [ext_resource type="Texture2D" uid="uid://r0x5i2s0vspc" path="res://Menu Assets/Selection Title.png" id="23_28w0c"]
 [ext_resource type="Texture2D" uid="uid://baxgt8gltobrw" path="res://Menu Assets/Back (1).png" id="24_puqb1"]
-[ext_resource type="PackedScene" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
+[ext_resource type="PackedScene" uid="uid://caox85jy5105h" path="res://Menu Scenes/carousel_container.tscn" id="26_qw04s"]
+[ext_resource type="FontFile" uid="uid://bsdm1pj7st7rm" path="res://Font/Modular Amplitude.otf" id="28_pm2xg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lneat"]
 
@@ -881,6 +882,218 @@ position = Vector2(542.66, 309.028)
 scale = Vector2(18.7605, 13.0197)
 shape = SubResource("RectangleShape2D_lneat")
 
+[node name="CarouselContainer2" parent="." node_paths=PackedStringArray("position_offset_node") instance=ExtResource("26_qw04s")]
+visible = false
+z_index = -1
+position = Vector2(1217, 79)
+scale = Vector2(0.916, 0.916)
+spacing = -62.0
+opacity_strength = 0.0
+scale_strength = 0.265
+scale_min = 0.01
+position_offset_node = NodePath("Control")
+
+[node name="Control" type="Control" parent="CarouselContainer2"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 96.4995
+offset_right = 40.0
+offset_bottom = 136.5
+mouse_filter = 1
+
+[node name="Lesson1" type="TextureButton" parent="CarouselContainer2/Control"]
+z_index = 1
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = -538.0
+offset_right = 538.0
+offset_bottom = 644.0
+scale = Vector2(1, 1)
+pivot_offset = Vector2(538, 322)
+keep_pressed_outside = true
+texture_normal = ExtResource("7_28w0c")
+
+[node name="whole note" type="Sprite2D" parent="CarouselContainer2/Control/Lesson1"]
+material = ExtResource("4_lneat")
+position = Vector2(926.856, 425.983)
+scale = Vector2(2.14564, 1.78043)
+texture = ExtResource("8_8ebx2")
+
+[node name="Grade Text" type="Label" parent="CarouselContainer2/Control/Lesson1"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson1Area" type="Area2D" parent="CarouselContainer2/Control/Lesson1"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer2/Control/Lesson1/Lesson1Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson2" type="TextureButton" parent="CarouselContainer2/Control"]
+z_index = -1
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = -538.0
+offset_top = 582.0
+offset_right = 538.0
+offset_bottom = 1226.0
+scale = Vector2(0.735, 0.735)
+pivot_offset = Vector2(538, 322)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("9_puqb1")
+
+[node name="whole note" type="Sprite2D" parent="CarouselContainer2/Control/Lesson2"]
+material = ExtResource("4_lneat")
+position = Vector2(943.232, 473.576)
+scale = Vector2(0.730436, 0.606109)
+texture = ExtResource("11_qw04s")
+
+[node name="Grade Text" type="Label" parent="CarouselContainer2/Control/Lesson2"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson2Area" type="Area2D" parent="CarouselContainer2/Control/Lesson2"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer2/Control/Lesson2/Lesson2Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson3" type="TextureButton" parent="CarouselContainer2/Control"]
+z_index = -2
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = -538.0
+offset_top = 1164.0
+offset_right = 538.0
+offset_bottom = 1808.0
+scale = Vector2(0.735, 0.735)
+pivot_offset = Vector2(538, 322)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("11_pm2xg")
+
+[node name="Sprite2D" type="Sprite2D" parent="CarouselContainer2/Control/Lesson3"]
+material = ExtResource("4_lneat")
+position = Vector2(959.607, 461.127)
+scale = Vector2(1.18948, 1.18948)
+texture = ExtResource("8_rpu63")
+
+[node name="Grade Text" type="Label" parent="CarouselContainer2/Control/Lesson3"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson3Area" type="Area2D" parent="CarouselContainer2/Control/Lesson3"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer2/Control/Lesson3/Lesson3Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson4" type="TextureButton" parent="CarouselContainer2/Control"]
+z_index = -3
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = -538.0
+offset_top = 1746.0
+offset_right = 538.0
+offset_bottom = 2390.0
+scale = Vector2(0.735, 0.735)
+pivot_offset = Vector2(538, 322)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("13_47u5r")
+
+[node name="whole note" type="Sprite2D" parent="CarouselContainer2/Control/Lesson4"]
+material = ExtResource("4_lneat")
+position = Vector2(874.454, 484.703)
+scale = Vector2(1.101, 0.913598)
+texture = ExtResource("15_47u5r")
+
+[node name="Grade Text" type="Label" parent="CarouselContainer2/Control/Lesson4"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson4Area" type="Area2D" parent="CarouselContainer2/Control/Lesson4"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer2/Control/Lesson4/Lesson4Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
+[node name="Lesson5" type="TextureButton" parent="CarouselContainer2/Control"]
+z_index = -4
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = -538.0
+offset_top = 2328.0
+offset_right = 538.0
+offset_bottom = 2972.0
+scale = Vector2(0.735, 0.735)
+pivot_offset = Vector2(538, 322)
+focus_mode = 0
+mouse_filter = 2
+texture_normal = ExtResource("15_yfa7k")
+
+[node name="whole note" type="Sprite2D" parent="CarouselContainer2/Control/Lesson5"]
+material = ExtResource("4_lneat")
+position = Vector2(874.454, 495.179)
+scale = Vector2(0.428407, 0.428407)
+texture = ExtResource("10_rpu63")
+
+[node name="Grade Text" type="Label" parent="CarouselContainer2/Control/Lesson5"]
+material = ExtResource("4_lneat")
+layout_mode = 0
+offset_left = 71.535
+offset_top = 456.585
+offset_right = 483.535
+offset_bottom = 588.585
+mouse_filter = 1
+theme_override_font_sizes/font_size = 96
+text = "Grade:  S"
+
+[node name="Lesson5Area" type="Area2D" parent="CarouselContainer2/Control/Lesson5"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CarouselContainer2/Control/Lesson5/Lesson5Area"]
+position = Vector2(542.66, 309.028)
+scale = Vector2(18.7605, 13.0197)
+shape = SubResource("RectangleShape2D_lneat")
+
 [node name="SelectionTitle" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 5
@@ -910,7 +1123,32 @@ position = Vector2(1199.48, 295.852)
 scale = Vector2(85.8047, 0.904198)
 shape = SubResource("RectangleShape2D_bulmj")
 
+[node name="FreeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 852.0
+offset_right = 568.0
+offset_bottom = 961.0
+scale = Vector2(0.778711, 0.778711)
+theme_override_fonts/font = ExtResource("28_pm2xg")
+theme_override_font_sizes/font_size = 96
+text = "FREE
+"
+
+[node name="AdvancedButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 945.0
+offset_right = 778.0
+offset_bottom = 1054.0
+scale = Vector2(0.778711, 0.778711)
+theme_override_fonts/font = ExtResource("28_pm2xg")
+theme_override_font_sizes/font_size = 96
+text = "Advanced"
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="area_entered" from="Play/PlayArea" to="." method="_on_play_area_area_entered"]
 [connection signal="area_exited" from="Play/PlayArea" to="." method="_on_play_area_area_exited"]
+[connection signal="pressed" from="FreeButton" to="." method="_on_free_button_pressed"]
+[connection signal="pressed" from="AdvancedButton" to="." method="_on_advanced_button_pressed"]
