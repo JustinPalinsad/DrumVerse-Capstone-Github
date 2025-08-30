@@ -468,14 +468,20 @@ position = Vector2(1217, 79)
 scale = Vector2(0.916, 0.916)
 spacing = -62.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 opacity_strength = 0.0
 scale_strength = 0.265
 scale_min = 0.01
 =======
+=======
+>>>>>>> parent of 27e62c2 (test)
 wraparound_enabled = true
 opacity_strength = 0.4
 scale_min = 0.86
 follow_button_focus = true
+<<<<<<< HEAD
+>>>>>>> parent of 27e62c2 (test)
+=======
 >>>>>>> parent of 27e62c2 (test)
 position_offset_node = NodePath("Control")
 
@@ -540,6 +546,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson2" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -551,7 +561,11 @@ offset_top = 582.0
 offset_right = 538.0
 offset_bottom = 1226.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -587,6 +601,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson3" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -598,7 +616,11 @@ offset_top = 1164.0
 offset_right = 538.0
 offset_bottom = 1808.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -634,6 +656,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson4" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -645,7 +671,11 @@ offset_top = 1746.0
 offset_right = 538.0
 offset_bottom = 2390.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -681,6 +711,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson5" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -692,7 +726,11 @@ offset_top = 2328.0
 offset_right = 538.0
 offset_bottom = 2972.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -728,6 +766,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson6" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -739,7 +781,11 @@ offset_top = 2910.0
 offset_right = 538.0
 offset_bottom = 3554.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -775,6 +821,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson7" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -786,7 +836,11 @@ offset_top = 3492.0
 offset_right = 538.0
 offset_bottom = 4136.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -830,6 +884,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson8" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -841,7 +899,11 @@ offset_top = 4074.0
 offset_right = 538.0
 offset_bottom = 4718.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -886,6 +948,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson9" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -897,7 +963,11 @@ offset_top = 4656.0
 offset_right = 538.0
 offset_bottom = 5300.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
@@ -939,6 +1009,10 @@ shape = SubResource("RectangleShape2D_lneat")
 
 [node name="Lesson10" type="TextureButton" parent="CarouselContainer/Control"]
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+modulate = Color(1, 1, 1, 0.6)
+>>>>>>> parent of 27e62c2 (test)
 =======
 modulate = Color(1, 1, 1, 0.6)
 >>>>>>> parent of 27e62c2 (test)
@@ -950,7 +1024,11 @@ offset_top = 5238.0
 offset_right = 538.0
 offset_bottom = 5882.0
 <<<<<<< HEAD
+<<<<<<< HEAD
 scale = Vector2(0.735, 0.735)
+=======
+scale = Vector2(0.86, 0.86)
+>>>>>>> parent of 27e62c2 (test)
 =======
 scale = Vector2(0.86, 0.86)
 >>>>>>> parent of 27e62c2 (test)
