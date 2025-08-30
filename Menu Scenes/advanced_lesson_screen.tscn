@@ -243,6 +243,7 @@ shape = SubResource("RectangleShape2D_stv6e")
 stream = ExtResource("15_4ovbc")
 
 [node name="FreeButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 288.0
 offset_top = 852.0
 offset_right = 568.0
@@ -254,6 +255,7 @@ text = "FREE
 "
 
 [node name="AdvancedButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 179.0
 offset_top = 945.0
 offset_right = 778.0
